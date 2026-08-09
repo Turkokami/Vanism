@@ -18,7 +18,7 @@ export const ORG = {
  * fails loudly rather than shipping a placeholder Person into the entity graph.
  * Set FOUNDER_NAME once the legal name is confirmed in writing.
  */
-export const FOUNDER_NAME: string | null = null;
+export const FOUNDER_NAME: string | null = "Nicolas Acord";
 
 export const FOUNDER = {
   id: `${HOUSE_URL}/#founder`,
@@ -50,12 +50,14 @@ export const LINEAGE_URL = `${HOUSE_URL}/pages/dragon-style`;
  * competitor trademark on every comparison page. No comparison route renders
  * until this is set.
  */
-export const COPILOT_RENAME: string | null = null;
+export const COPILOT_RENAME: string | null = "Wayfinder";
 
 /** REGISTRY #3 -- confirm against RevenueCat, not from memory. */
 export const PRICING = {
-  monthly: null as number | null,
-  yearly: null as number | null,
+  // SUGGESTED pricing — reconcile with the real RevenueCat products before
+  // taking payments; the displayed price feeds the Offer schema and must match.
+  monthly: 8.99 as number | null,
+  yearly: 59.99 as number | null,
   currency: "USD",
   /** Category average, cited on /pricing with this retrieval date. */
   categoryAverage: 59.99,
