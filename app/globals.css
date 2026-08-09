@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/*
+ * VANISM DESIGN TOKENS
+ * ---------------------------------------------------------------------------
+ * Base is the established identity: dark ground, one accent, uppercase display.
+ *
+ * The accent is survey-marker brass. A benchmark disc is set into rock by
+ * someone who walked there, it is never handed out, and it records a verified
+ * position. That is Law I rendered as a colour. It is used only on earned
+ * states and primary actions -- never as decoration.
+ *
+ * --verify is a state colour, not a brand colour. It appears only where a
+ * claim is backed by GPS-verified check-ins.
+ */
+
+@theme {
+  --color-ink:        #1C1F22;
+  --color-ink-deep:   #14171A;
+  --color-ink-raised: #23272B;
+  --color-bone:       #E9E7E2;
+  --color-slate:      #8C9794;
+  --color-brass:      #B08D3F;
+  --color-brass-lit:  #D4AC55;
+  --color-verify:     #4E8C7D;
+
+  --font-display: var(--font-archivo), "Arial Narrow", sans-serif;
+  --font-body:    var(--font-inter), system-ui, sans-serif;
+  --font-data:    var(--font-mono), ui-monospace, monospace;
+
+  --tracking-display: -0.02em;
+  --tracking-eyebrow: 0.18em;
+}
+
+:root { color-scheme: dark; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display face is used with restraint: page-level headings only. */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-display);
+  line-height: 0.95;
+  font-stretch: 87.5%;
+}
+
+.eyebrow {
+  font-family: var(--font-data);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-brass);
+}
+
+/* Data face carries anything a rider could verify: coordinates, counts, dates. */
+.data { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+
+/* Quality floor -- not announced, just met. */
+:focus-visible {
+  outline: 2px solid var(--color-brass-lit);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* The signature element. A benchmark disc: struck, not printed. */
+.stamp {
+  border: 1px solid color-mix(in srgb, var(--color-brass) 45%, transparent);
+  background:
+    radial-gradient(circle at 30% 25%,
+      color-mix(in srgb, var(--color-brass) 12%, transparent), transparent 60%),
+    var(--color-ink-deep);
+}
