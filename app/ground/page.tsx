@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AnswerBox } from "@/components/AnswerBox";
 import { CtaBar } from "@/components/CtaBar";
 import { getStates, getPublishableObjectives } from "@/lib/queries";
+import { STATES, STATE_CODES } from "@/content/states";
 
 export const revalidate = 1800;
 
@@ -14,9 +15,11 @@ export const metadata: Metadata = {
 };
 
 export default async function GroundIndex() {
-  const [states, objectives] = await Promise.all([getStates(), getPublishableObjectives()]);
+  const [dbStates, objectives] = await Promise.all([getStates(), getPublishableObjectives()]);
   const byState = new Map<string, number>();
   objectives.forEach((o) => byState.set(o.state, (byState.get(o.state) ?? 0) + 1));
+  // Static state hubs plus any state that has objectives, deduped and sorted.
+  const states = Array.from(new Set([...STATE_CODES, ...dbStates])).sort();
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-20">
@@ -42,7 +45,7 @@ export default async function GroundIndex() {
               href={`/ground/${s}`}
               className="flex items-baseline justify-between bg-ink px-5 py-4 hover:bg-ink-deep"
             >
-              <span className="display text-lg text-bone">{s.toUpperCase()}</span>
+              <span className="display text-lg text-bone">{STATES[s]?.name ?? s.toUpperCase()}</span>
               <span className="data text-xs text-slate">{byState.get(s) ?? 0}</span>
             </Link>
           </li>
