@@ -10,6 +10,17 @@
  * in that clause.
  */
 
+import type { Block } from "./blocks";
+import { FEATURE_GPS_VERIFIED_CHECK_INS } from "./feature-gps-verified-check-ins";
+import { FEATURE_ACCESS_STATUS } from "./feature-access-status";
+import { FEATURE_CONDITION_REPORTS } from "./feature-condition-reports";
+import { FEATURE_OFFLINE_MAPS } from "./feature-offline-maps";
+import { FEATURE_SEASON_CONTINUITY } from "./feature-season-continuity";
+import { FEATURE_SAVED_RUNS } from "./feature-saved-runs";
+import { FEATURE_RANK } from "./feature-rank";
+import { FEATURE_DRAGON } from "./feature-dragon";
+import { FEATURE_THE_VILLAGE } from "./feature-the-village";
+
 export type Clause = "verification" | "continuity" | "progression";
 
 export type Feature = {
@@ -22,6 +33,8 @@ export type Feature = {
   title: string;
   description: string;
   body: string[];
+  /** Long-form structured document; when present, renders instead of body. */
+  blocks?: Block[];
   faq: { q: string; a: string }[];
   /** Objectives/runs/codex this spoke links into. */
   related: { label: string; href: string }[];
@@ -49,6 +62,7 @@ export const FEATURES: Feature[] = [
   // ---------------------------------------------------------- VERIFICATION
   {
     slug: "gps-verified-check-ins",
+    blocks: FEATURE_GPS_VERIFIED_CHECK_INS,
     name: "GPS-verified check-ins",
     clause: "verification",
     title: "GPS-verified check-ins",
@@ -82,6 +96,7 @@ export const FEATURES: Feature[] = [
   },
   {
     slug: "access-status",
+    blocks: FEATURE_ACCESS_STATUS,
     name: "Access status",
     clause: "verification",
     title: "Access status on every site",
@@ -111,6 +126,7 @@ export const FEATURES: Feature[] = [
   },
   {
     slug: "condition-reports",
+    blocks: FEATURE_CONDITION_REPORTS,
     name: "Condition reports",
     clause: "verification",
     title: "Recent conditions from riders",
@@ -142,6 +158,7 @@ export const FEATURES: Feature[] = [
   // ---------------------------------------------------------- CONTINUITY
   {
     slug: "offline-maps",
+    blocks: FEATURE_OFFLINE_MAPS,
     name: "Offline maps",
     clause: "continuity",
     title: "Offline maps and access notes",
@@ -171,6 +188,7 @@ export const FEATURES: Feature[] = [
   },
   {
     slug: "season-continuity",
+    blocks: FEATURE_SEASON_CONTINUITY,
     name: "Season continuity",
     clause: "continuity",
     title: "One record across the season",
@@ -200,6 +218,7 @@ export const FEATURES: Feature[] = [
   },
   {
     slug: "saved-runs",
+    blocks: FEATURE_SAVED_RUNS,
     name: "Saved runs",
     clause: "continuity",
     title: "Build and save your own runs",
@@ -231,6 +250,7 @@ export const FEATURES: Feature[] = [
   // ---------------------------------------------------------- PROGRESSION
   {
     slug: "rank",
+    blocks: FEATURE_RANK,
     name: "Rank",
     clause: "progression",
     title: "How rank works in Vanism",
@@ -264,6 +284,7 @@ export const FEATURES: Feature[] = [
   },
   {
     slug: "dragon",
+    blocks: FEATURE_DRAGON,
     name: "Dragon",
     clause: "progression",
     title: "Dragon, the earned currency",
@@ -297,6 +318,7 @@ export const FEATURES: Feature[] = [
   },
   {
     slug: "the-village",
+    blocks: FEATURE_THE_VILLAGE,
     name: "The Village",
     clause: "progression",
     title: "Public rider profiles, off by default",

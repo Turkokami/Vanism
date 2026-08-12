@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { AnswerBox } from "@/components/AnswerBox";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FaqBlock } from "@/components/FaqBlock";
+import { Prose } from "@/components/Prose";
+import { TableOfContents } from "@/components/TableOfContents";
 import { CtaBar } from "@/components/CtaBar";
 import { JsonLd } from "@/components/JsonLd";
 import { graph, faqNode, breadcrumb } from "@/lib/schema";
@@ -69,11 +71,18 @@ export default async function Capability({
         </AnswerBox>
       </div>
 
-      <div className="mt-10 space-y-5 text-[0.95rem] leading-relaxed text-slate">
-        {f.body.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
-      </div>
+      {f.blocks ? (
+        <>
+          <TableOfContents blocks={f.blocks} />
+          <Prose blocks={f.blocks} />
+        </>
+      ) : (
+        <div className="mt-10 space-y-5 text-[0.95rem] leading-relaxed text-slate">
+          {f.body.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      )}
 
       <FaqBlock items={f.faq} />
 
