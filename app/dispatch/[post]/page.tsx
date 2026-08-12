@@ -5,10 +5,13 @@ import { AnswerBox } from "@/components/AnswerBox";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FaqBlock } from "@/components/FaqBlock";
 import { CtaBar } from "@/components/CtaBar";
+import { Prose } from "@/components/Prose";
+import { TableOfContents } from "@/components/TableOfContents";
 import { JsonLd } from "@/components/JsonLd";
 import { graph, faqNode, breadcrumb, articleNode } from "@/lib/schema";
 import { SITE_URL, FOUNDER_NAME } from "@/lib/site";
 import { POSTS, getPost, getCluster, postsByCluster } from "@/content/dispatch";
+import { readingMinutes } from "@/content/blocks";
 
 export async function generateStaticParams() {
   return POSTS.map((p) => ({ post: p.slug }));
@@ -69,6 +72,7 @@ export default async function DispatchPost({ params }: { params: Promise<{ post:
       <p className="data mt-3 text-xs text-slate">
         {FOUNDER_NAME ?? "AUTHOR PENDING -- registry #1"} &middot;{" "}
         <time dateTime={p.published}>{p.published}</time>
+        {p.blocks && <> &middot; {readingMinutes(p.blocks)} min read</>}
       </p>
 
       <div className="mt-9">
@@ -77,11 +81,18 @@ export default async function DispatchPost({ params }: { params: Promise<{ post:
         </AnswerBox>
       </div>
 
-      <div className="mt-10 space-y-5 text-[1rem] leading-relaxed text-bone/90">
-        {p.body.map((para, i) => (
-          <p key={i}>{para}</p>
-        ))}
-      </div>
+      {p.blocks ? (
+        <>
+          <TableOfContents blocks={p.blocks} />
+          <Prose blocks={p.blocks} />
+        </>
+      ) : (
+        <div className="mt-10 space-y-5 text-[1rem] leading-relaxed text-bone/90">
+          {(p.body ?? []).map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+      )}
 
       <FaqBlock items={p.faq} />
 
