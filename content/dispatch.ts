@@ -11,6 +11,14 @@
 
 import type { Block } from "./blocks";
 import { DISPERSED_RULES } from "./pillar-dispersed-rules";
+import { PILLAR_OVERNIGHT_PARKING_OFF_PUBLIC_LAND } from "./pillar-overnight-parking-off-public-land";
+import { PILLAR_LONG_TERM_VISITOR_AREAS_AND_SNOWBIRD_CAMPING } from "./pillar-long-term-visitor-areas-and-snowbird-camping";
+import { PILLAR_TOILET_AND_WASTE_SYSTEMS_ON_THE_ROAD } from "./pillar-toilet-and-waste-systems-on-the-road";
+import { PILLAR_COOKING_AND_EATING_WELL_ON_THE_ROAD } from "./pillar-cooking-and-eating-well-on-the-road";
+import { PILLAR_STAYING_CLEAN_WATER_SHOWERS_AND_HYGIENE } from "./pillar-staying-clean-water-showers-and-hygiene";
+import { PILLAR_DESERT_CAMPING_IN_SUMMER_HEAT } from "./pillar-desert-camping-in-summer-heat";
+import { PILLAR_WHY_VERIFICATION_BEATS_CROWDSOURCED_REVIEWS } from "./pillar-why-verification-beats-crowdsourced-reviews";
+import { PILLAR_LEAVE_NO_TRACE_AND_KEEPING_ACCESS_OPEN } from "./pillar-leave-no-trace-and-keeping-access-open";
 import { PILLAR_BACKCOUNTRY_NAVIGATION_WITHOUT_A_SIGNAL } from "./pillar-backcountry-navigation-without-a-signal";
 import { PILLAR_READING_MOUNTAIN_WEATHER_AND_LIGHTNING } from "./pillar-reading-mountain-weather-and-lightning";
 import { PILLAR_FINDING_AND_TREATING_WATER_IN_THE_BACKCOUNTRY } from "./pillar-finding-and-treating-water-in-the-backcountry";
@@ -102,6 +110,158 @@ export type Post = {
 };
 
 export const POSTS: Post[] = [
+  {
+    slug: "overnight-parking-off-public-land",
+    cluster: "finding-ground",
+    pillar: true,
+    title: "Overnight Parking When You Are Not on Public Land",
+    description: "Where to legally sleep in transit or in a city -- rest areas, truck stops, business lots, casinos, and streets -- with the etiquette that keeps each option open.",
+    published: "2026-08-11",
+    answer: "When dispersed ground is not an option, the reliable overnight stops are interstate rest areas in states that permit them, truck stops parked in the car section, casino lots that welcome travelers, and business lots where a manager has said yes to your face. The discipline that keeps them open is the same everywhere: arrive late, stay level and undramatic, deploy nothing outside the vehicle, and leave early. Parking is usually tolerated; camping usually is not, and the line between them is whether anything is on the pavement.",
+    blocks: PILLAR_OVERNIGHT_PARKING_OFF_PUBLIC_LAND,
+    faq: [
+      { q: "Can you sleep overnight at interstate rest areas", a: "It depends entirely on the state -- there is no federal rule. Many western and plains states permit or tolerate an overnight stop, while a number of eastern and southeastern states post firm time limits of three or four hours. The sign at the entrance is the operative rule." },
+      { q: "Is it still safe to assume big retail chains allow overnight parking", a: "No. The old blanket-permission assumption is gone; permission was always at store discretion, and a growing number of individual locations no longer allow it because of city ordinances or leased lots. Ask a manager inside early in the evening and accept the answer without negotiating." },
+      { q: "Where should you park at a truck stop overnight", a: "In the car or RV section, never in a numbered truck slot. Those spaces exist for drivers who are legally required to rest, and taking one in a passenger vehicle costs a working driver a legal place to sleep. Park in the car area, buy something, and keep the space clean." },
+      { q: "What is the difference between parking and camping for enforcement", a: "Parking is a vehicle at rest with its occupants inside; camping is anything deployed outside -- a chair, an awning, leveling ramps, or a running generator. Most ordinances prohibit camping and say nothing enforceable about a parked, occupied vehicle, so the moment gear touches the pavement you lose the protection." },
+      { q: "Is it legal to sleep in your vehicle on a city street", a: "It varies by municipality and is the highest-risk option. Many cities prohibit sleeping or living in a vehicle outright, and many more restrict overnight parking through posted hours or permit zones. Read the posted signs, favor commercial or industrial edges over residential blocks, and treat it as a last resort." },
+      { q: "Do casinos really allow overnight parking", a: "Casinos in a number of states actively welcome it, on the theory that a parked traveler may spend money inside. Many have a designated RV or overnight area, and some offer hookups for a nominal fee. Going inside as a patron honors the arrangement, though it is rarely required." },
+      { q: "What is the etiquette that keeps a lot tolerant", a: "Arrive late, stay level and closed up, deploy nothing outside the vehicle, and leave early. Buy something where you can, keep the space cleaner than you found it, and never idle a generator overnight. Every lot that closes did so because someone treated a parking space like a campsite." },
+    ],
+  },
+  {
+    slug: "long-term-visitor-areas-and-snowbird-camping",
+    cluster: "legality",
+    pillar: true,
+    title: "Long-Term Visitor Areas (LTVAs) and Snowbird Camping",
+    description: "How to winter legally and cheaply on public land in the desert Southwest: BLM Long-Term Visitor Area permits, the free 14-day dispersed alternative, the snowbird season, solar, and services.",
+    published: "2026-08-11",
+    answer: "A BLM Long-Term Visitor Area (LTVA) lets you camp on public land in the desert Southwest for the whole winter season -- roughly September 15 to April 15 -- for a flat permit near $180, with dump stations, potable water, and trash service included. The free 14-day dispersed areas beside them cost nothing but cap you at 14 days and carry no services. The lower Colorado River country fills November to March because it is the only large block of public land both legal and comfortable to camp all winter; heat closes it in summer, and in winter the real constraint is water and services, not temperature. Permit fees and season dates are set by BLM -- confirm them with the Yuma or El Centro field office before you commit the drive.",
+    blocks: PILLAR_LONG_TERM_VISITOR_AREAS_AND_SNOWBIRD_CAMPING,
+    faq: [
+      { q: "How much does a BLM Long-Term Visitor Area permit cost", a: "The long-term permit runs about $180 for the full season and the short-visit permit about $40 for up to 14 days, with both covering all seven LTVAs and including dump stations, potable water, and trash service. Fees are set by BLM and change between seasons, so confirm the current figure with the Yuma or El Centro field office." },
+      { q: "How long can you stay in an LTVA", a: "A long-term permit lets you stay the entire long-term season, roughly September 15 to April 15, and move freely between all seven LTVAs. The free 14-day dispersed areas nearby, by contrast, cap you at 14 days in a 28-day period." },
+      { q: "What is the difference between an LTVA and free 14-day dispersed camping", a: "An LTVA charges a permit but bundles a full-season stay with dump stations, water fills, and trash service; the free dispersed areas cost nothing but limit you to 14 days and provide no services at all. The permit usually wins for a settled winter, while the free ground wins for stays under two weeks." },
+      { q: "Where are the BLM Long-Term Visitor Areas located", a: "All seven sit in the low desert of southwestern Arizona and southeastern California along the lower Colorado River: La Posa at Quartzsite, Imperial Dam and Pilot Knob near Yuma, Tamarisk and Hot Spring near Holtville, and Mule Mountain and Midland toward Blythe. The Arizona LTVAs are run by the Yuma Field Office and the California ones by El Centro." },
+      { q: "Why do snowbirds camp in the desert from November to March", a: "The low desert is the only large block of legal public camping in the country that is comfortable through winter, when almost everything at usable elevation elsewhere is under snow or hard freeze. The season peaks in January around the Quartzsite shows and empties by the April 15 close as summer heat returns." },
+      { q: "Is heat a problem when winter camping in the desert Southwest", a: "No -- winter daytime highs in Yuma and Quartzsite typically run in the mid-60s to low-70s Fahrenheit, which is the reason the migration exists. The real constraints are hauling water and dumping tanks, plus overnight lows that can drop to freezing, not heat." },
+      { q: "Does solar work well in the desert in winter", a: "Yes on clear-sky reliability -- Yuma sees close to 90 percent of possible sunshine -- but winter days are short at about ten hours and the sun sits low, cutting the output of a flat-mounted panel. Tilting panels toward the south at 45 to 50 degrees recovers much of the loss." },
+    ],
+  },
+  {
+    slug: "toilet-and-waste-systems-on-the-road",
+    cluster: "systems",
+    pillar: true,
+    title: "Toilet and waste systems that do not fail you",
+    description: "The four road and trail waste systems compared -- cassette, composting, bucket-and-bag, and the backcountry cathole -- with legal dumping rules, grey water, wag-bag zones, and honest maintenance.",
+    published: "2026-08-11",
+    answer: "There are four practical systems: a cassette toilet, a composting or dry-separating toilet, a bucket-and-bag, and the backcountry cathole. A cassette is cheapest but ties you to a dump station every three to five days; a dry-separating toilet runs for weeks and smells least when kept dry; a bucket-and-bag never smells and never needs a dump station but runs on bags; and on foot the standard is a cathole six to eight inches deep and 200 feet from water, or a wag bag where one is required. Cassette waste goes to a sanctioned dump station only -- never into the ground, a pit privy, or a vault toilet.",
+    blocks: PILLAR_TOILET_AND_WASTE_SYSTEMS_ON_THE_ROAD,
+    faq: [
+      { q: "Where do I legally empty a cassette or black tank", a: "Only at a sanctioned RV dump station, which routes to a septic or treatment system. Never pour it on the ground, down a storm drain, or into a vault toilet or pit privy -- a vault toilet is a pumped holding tank, not a treatment system, and cassette waste overloads it." },
+      { q: "Do composting toilets actually smell", a: "Kept dry they are the least smelly of the four systems. The name is misleading -- nothing composts in the days you own the material; the unit separates urine from solids, and that separation is what removes the odour. The smell only returns if moisture reaches the solids chamber or the vent fan stops." },
+      { q: "How deep should a cathole be and how far from water", a: "Six to eight inches deep, into the biologically active topsoil layer, and 200 feet -- about 70 adult paces -- from any water, camp, or trail. Dig in soil rather than under a rock, and fill and disguise the hole afterward." },
+      { q: "Can I bury toilet paper in a cathole", a: "No -- pack it out in a doubled, opaque zip bag. Buried paper persists for years in dry or cold country and animals dig it up, and in many jurisdictions packing it out is the written rule, not a courtesy." },
+      { q: "How often does each toilet system need emptying", a: "A cassette runs three to five days per five-gallon tank for one rider; a dry-separating toilet needs its urine bottle emptied daily but its solids chamber only every three to six weeks; a bucket-and-bag is swapped per bag. The interval, not the technology, is what shapes a route." },
+      { q: "What do I do with grey water on public land", a: "Strain the food solids into the trash first, then scatter the water broadly at least 200 feet from any source, or empty it at a dump station grey inlet. Never pour it into a stream or lake or down a storm drain, which usually runs untreated to a creek." },
+      { q: "Where are wag bags required instead of a cathole", a: "Above treeline and in alpine zones, on high-use trails and popular basins, in river corridors under permit, and on snow or glacier -- anywhere soil is thin, frozen, or overwhelmed by traffic. The trend is toward more pack-out every season, so assume the stricter standard where you are unsure." },
+    ],
+  },
+  {
+    slug: "cooking-and-eating-well-on-the-road",
+    cluster: "systems",
+    pillar: true,
+    title: "Cooking and Eating Well on the Road: Stoves, Storage, and Resupply",
+    description: "Feeding yourself for a season without a full kitchen: stoves and fuel compared, the small-fridge reality, storing food against heat and rough roads, resupply rhythm, and eating cheap without junk.",
+    published: "2026-08-11",
+    answer: "Feeding yourself for a long season without a full kitchen comes down to two constraints -- power and water -- and every other decision follows from them. Match the stove to your fuel supply and fire-restriction risk, treat cold storage as a small buffer rather than a pantry, provision most of your calories from shelf-stable food, and refresh fresh items on a short rhythm in the towns you pass. Do that and you eat well on roughly the grocery budget you kept at home; ignore it and you drift onto packaged junk within a fortnight.",
+    blocks: PILLAR_COOKING_AND_EATING_WELL_ON_THE_ROAD,
+    faq: [
+      { q: "What stove should I choose for cooking on the road", a: "Match it to your fuel access and fire-restriction risk. A propane two-burner off a refillable tank is the cheapest and most capable for real cooking and survives every fire stage short of a total open-flame ban; a single-burner canister stove is the best compact backup; induction only works with a large battery and solar." },
+      { q: "Do I need a fridge to eat well in a van", a: "No. A van fridge is a small buffer for a few days of perishables, not a pantry, and it costs power every hour. Riders running no fridge eat well on shelf-stable staples plus fresh food that survives days unrefrigerated -- hard vegetables, eggs, cured meat, and hard cheese." },
+      { q: "How do I keep food from spoiling in a hot van", a: "Store food low and shaded rather than in sunlit upper cabinets, which run 20 to 40F hotter than outside air. Keep chocolate, butter, and oils in the coolest locker you have, and discard any can that bulges, leaks, or is badly rusted at the seam." },
+      { q: "How often should I resupply on a long trip", a: "Run two loops: a deep shelf-stable shop every two to three weeks at a real supermarket in a larger town, and a short fresh top-up every three to five days at whatever small-town store you pass. Water, not food, usually sets how far apart the loops fall." },
+      { q: "How do I cook with limited water", a: "Cook in one pot you eat straight from, wipe it dry with paper or bread before washing, and reuse rinse water as wash water down a hierarchy. A tight lidded pot cooks grain in far less water than the package assumes." },
+      { q: "How do I store food safely when cooking in bear country", a: "Cook and eat away from where you sleep, seal all food and scented items inside the closed hard-sided vehicle overnight, and pack out every scrap of waste. Where a bear canister or locker is required, a closed vehicle does not count as storage -- use the canister." },
+      { q: "Is cooking on the road cheaper than eating packaged food", a: "Yes, if you build calories from bulk staples -- rice, beans, lentils, oats, pasta -- and spend the small money on a spice kit rather than convenience food. Done that way it costs roughly a careful home grocery budget, sometimes less; freeze-dried and gas-station food are the expensive end." },
+    ],
+  },
+  {
+    slug: "staying-clean-water-showers-and-hygiene",
+    cluster: "systems",
+    pillar: true,
+    title: "Staying Clean Off-Grid: Showers, Water, and Hygiene",
+    description: "A field guide to staying clean without hookups -- solar showers, basin baths, the paid shower network, heating water, legal grey water, laundry, and a water-lean daily routine.",
+    published: "2026-08-11",
+    answer: "Staying clean off-grid is a routine, not a piece of equipment. Most riders run a hierarchy: wipes and a basin on water-lean days, a one-to-two-gallon solar or pump-sprayer rinse when there is water and sun, and a paid hot shower at a truck stop, gym, or rec center every three to seven days to reset. The rule that never bends is grey water -- soapy water never goes on bare ground or within 200 feet of a stream, spring, or lake. Everything else is a preference you tune to your tank and your season.",
+    blocks: PILLAR_STAYING_CLEAN_WATER_SHOWERS_AND_HYGIENE,
+    faq: [
+      { q: "How much water do you need to stay clean off-grid", a: "A deliberate rider stays genuinely clean on about three gallons a day, covering a basin sponge bath, hand-washing, dishes, and a couple of rinsed socks. A basin bath alone runs half a gallon to a gallon; wipes cost almost nothing on water-lean days. Run those habits and a 25-gallon-a-week tank covers washing, cooking, and drinking." },
+      { q: "Is a built-in shower worth the space in a van", a: "For full-timers who will use it daily and can dump grey water legally, yes; for part-timers it usually ends up storing gear while they shower at the gym. It costs 12 to 20 square feet of floor, a grey tank to dump, and daily drying to prevent mold. Skip it if your van is under 20 feet or you are out only weeks at a time, and put the space into water, power, or sleeping length." },
+      { q: "Where can you shower on the road for cheap", a: "The paid network covers almost every town: truck-stop showers run $15 to $18, national gym memberships give near-daily access for $20 to $60 a month, and city or county rec centers often charge just $5 to $15 for a drop-in that includes a pool. Rec centers are usually the best value, and a national gym plan is cheapest per shower for anyone on the road most of the year." },
+      { q: "How do you heat water for a shower without hookups", a: "The simplest reliable method is heating a quart on a propane or butane stove and pouring it into a basin or pump sprayer -- trivial fuel, works in any weather, no plumbing. A solar bag reaches 90 to 110F in three to five hours on a clear day but fails in cold or cloud. Full-timers who want endless hot flow add an instant propane heater, which needs ventilation and winter freeze protection." },
+      { q: "How do you legally dispose of grey water while camping", a: "Never pour soapy water on bare ground, down a storm drain, or within 200 feet of any stream, lake, spring, or stock tank. Carry it in a sealed 3-to-5-gallon jug to a legal dump -- RV dump stations, many campgrounds, and some gas stations take grey water. Even biodegradable soap only breaks down in soil over time, so keep it out of every water source." },
+      { q: "How do you do laundry living in a van", a: "Lean on wool and synthetic clothing that wears far longer than cotton, hand-wash the high-turnover items -- socks, underwear, a shirt -- in a basin as you go, and hit a laundromat every ten days to two weeks for the bulk reset. The sink-and-line method uses one to three gallons per session; hand-wash grey water follows the same disposal rules as any other." },
+      { q: "How do you stay healthy over a long season on the road", a: "The small stuff cuts seasons short more than the dramatic risks: wash your hands before food every time, keep feet dry and rotate socks, and wash the four hot spots -- groin, feet, underarms, skin folds -- daily even when you skip a full wash. Treat cuts the day you get them, keep fresh and grey water systems clearly separated, and ventilate the van after every wash to keep mold down." },
+    ],
+  },
+  {
+    slug: "desert-camping-in-summer-heat",
+    cluster: "seasons",
+    pillar: true,
+    title: "Desert Camping When the Heat Is the Hazard",
+    description: "A field manual for the summer desert: water per person per day, timing the day around the sun, using elevation to drop the heat, and reading heat illness in yourself.",
+    published: "2026-08-11",
+    answer: "In the summer desert, heat is the hazard that kills, and it does it in hours, not days. Carry and drink real water on a schedule -- one to two gallons per person per day, more when you move -- and hold a reserve you never spend. Do everything strenuous at dawn and dusk, shelter in shade through the midday, and climb: every thousand feet of elevation drops the air roughly three to five degrees. The general framework holds across the deserts; the temperature at your elevation this week comes from the local forecast and the district office.",
+    blocks: PILLAR_DESERT_CAMPING_IN_SUMMER_HEAT,
+    faq: [
+      { q: "How much drinking water do you need per person per day in real desert heat", a: "Plan on one gallon per person per day at rest in shade and two gallons or more when you are active in the sun. Above 105 degrees, hard activity in the sun costs three gallons a day and more. That is drinking water alone -- cooking, washing, and the dog are on top of it." },
+      { q: "How fast can desert heat actually become dangerous", a: "A dehydrated rider walking in 110-degree sun with no shade can move from mild heat stress to heat stroke in well under two hours. Heat stroke -- a core temperature above roughly 104 degrees with a failure of the body's cooling -- is a medical emergency with a real fatality rate even when treated." },
+      { q: "Why is elevation the best defense against desert heat", a: "Air cools roughly three to five degrees Fahrenheit for every thousand feet you climb. A valley floor running 110 can have a mountain flank thirty road miles away sitting near 80, often with shade the floor lacks. Plan a summer desert route in the vertical, not just the horizontal." },
+      { q: "When should you hike or drive in the summer desert", a: "Do everything strenuous at dawn and dusk -- from first light to about three hours after sunrise, and from three hours before sunset into dark -- when the air is coolest and the ground has not loaded up with heat. From late morning to mid-afternoon, hold still in shade, drink on schedule, and wait the heat out." },
+      { q: "What is the water reserve rule and why does it matter", a: "Split your water into working water, which the day's plan spends, and a fixed reserve -- often two gallons per person -- that you treat as if it were empty. Desert plans fail on the resupply, not the consumption: a dry spring or a washed-out road turns a comfortable margin into the reserve. When the working water is gone, the day is over and you leave." },
+      { q: "How do you keep a van, fridge, and batteries from overheating in the desert", a: "Park in natural shade, add external reflective window shades, and run a powered roof vent fan on exhaust to pull heat out. Ventilate the fridge compressor and keep the house battery bank out of direct sun -- a hot lithium battery can refuse to charge above roughly 113-131 degrees, exactly when your solar is producing most." },
+      { q: "What are the warning signs of heat illness to watch for in yourself", a: "Dark urine, headache, and tiredness signal early dehydration -- drink and get in shade now. Heavy sweat with weakness, nausea, and dizziness is heat exhaustion; stop the activity entirely and cool down. Confusion, or a rider who stops sweating or acts out of character, means heat stroke -- cool aggressively and get emergency help." },
+    ],
+  },
+  {
+    slug: "why-verification-beats-crowdsourced-reviews",
+    cluster: "the-record",
+    pillar: true,
+    title: "Why a Confirmed Record Beats a Crowdsourced Review",
+    description: "Why crowdsourced campsite pins and reviews rot, how a dated GPS-confirmed record differs in kind from an undated opinion, and why verifiable ground beats asserted ground.",
+    published: "2026-08-11",
+    answer: "A crowdsourced pin is an opinion left behind: undated, unlocated to the meter, and unverifiable after the fact. A confirmed record is different in kind -- a specific rider stood on that ground, fixed the position by GPS, on a known date, and the record carries that date so you can weigh how old it is. When the question is whether a place is still open, still passable, and still legal this week, a record you can verify beats ground someone asserted, every time. Reviews still settle taste; they cannot answer whether a place is open, legal, or reachable.",
+    blocks: PILLAR_WHY_VERIFICATION_BEATS_CROWDSOURCED_REVIEWS,
+    faq: [
+      { q: "What is the difference between a review and a confirmed record", a: "A review reports how a place made someone feel and cannot be checked. A confirmed record reports what a place was at a stated GPS position on a stated date, so another rider can weight it by age and reconfirm it before committing the drive." },
+      { q: "Why do crowdsourced campsite pins go out of date", a: "The ground changes and the pin does not. A site pinned three years ago may be washed out, gated by a seasonal closure, occupied, inside a new fire perimeter, closed by the district for overuse, or never legal in the first place -- and none of that is visible in the pin, which looks as fresh as the day it was posted." },
+      { q: "Why does the date on a record matter so much", a: "The date is the load-bearing field, because it converts a claim into evidence you can weigh. A confirmation under two weeks old is strong, three to twelve months is a lead worth rechecking, and over two years should be treated as unconfirmed and rebuilt from the authoritative source." },
+      { q: "How do anonymous pin dumps damage the places they point at", a: "A pin has no capacity limit and no sense of fragility, so it routes unlimited traffic onto a single fragile site. The ground compacts, vegetation dies, and the district eventually closes it -- and the pin keeps sending riders to a spot that is now signed and citable." },
+      { q: "When is a crowdsourced review or pin actually useful", a: "Reviews are fine for taste as a last step -- deciding which of two legal, reachable sites is quieter or has better light. Fresh, dated, first-hand road intel is also valuable, because no agency publishes whether a road washed out last week or whether the gate has opened." },
+      { q: "What makes a claim about a campsite verifiable", a: "A verifiable claim carries a precise position, a date of observation, an identified source, an access status, a stated method, and a retirement rule. A typical crowdsourced pin fails most of these, so it can only be believed, not checked." },
+      { q: "Does a confirmed record replace calling the district office", a: "No. A record is a strong starting point for current conditions, but the district office or managing agency remains the authority on legality, stay limits, fire restrictions, and closures. Verify what you can, confirm the rest at the source, and carry a fallback." },
+    ],
+  },
+  {
+    slug: "leave-no-trace-and-keeping-access-open",
+    cluster: "the-record",
+    pillar: true,
+    title: "Leave No Trace and Keeping the Ground Open",
+    description: "How the seven Leave No Trace principles applied to van life keep dispersed camping legal, why worn ground gets closed parcel by parcel, and why access is a shared permission.",
+    published: "2026-08-11",
+    answer: "Dispersed camping on public land is a collective permission, not a right, and it is priced by the worst behavior on the ground rather than the average. Agencies close areas parcel by parcel when a place shows wear -- fire rings, braided roads, human waste -- and closed ground rarely reopens. The seven Leave No Trace principles, applied to a vehicle, are the operating manual for keeping a site invisible enough that no land manager has cause to close it. Leaving a place as you found it is the other half of keeping an honest record of where you have been.",
+    blocks: PILLAR_LEAVE_NO_TRACE_AND_KEEPING_ACCESS_OPEN,
+    faq: [
+      { q: "Why does leaving no trace matter if enforcement in an area is thin", a: "The stronger reason is structural, not the citation. Agencies close areas on documented impact -- worn ground, complaints, cleanup cost -- and each closure pushes more riders onto the remaining open ground, accelerating impact there. Compliance is mainly about the ground still being open in five years, not about a ranger catching you." },
+      { q: "What are the three Leave No Trace principles that matter most for keeping ground open", a: "Durable surfaces, waste, and fire -- the three that leave visible, lasting, complaint-generating damage. A rider can do the other four principles well, but leaving human waste or building fire rings on fresh ground is what land managers cite when they close an area." },
+      { q: "Why is it a problem to widen a pullout or drive a short spur off the road", a: "Both permanently enlarge a site's footprint, and neither feels like anyone's fault. One rider parks at the edge, the next uses those tracks as the new edge, and within a season the pullout doubles. A braided web of user-created spurs is one of the most-cited reasons the Forest Service closes an area to vehicles entirely." },
+      { q: "How should riders handle human waste when dispersed camping in a van", a: "A cassette or composting toilet dumped at a station removes the question entirely and is why many long-season riders carry one. Where an area mandates pack-out, use waste bags; where burial is still allowed, dig a proper cathole six to eight inches deep and 200 feet from water, camp, and trail. Paper always leaves with you regardless of local rules." },
+      { q: "Does behaving well personally protect my own access to public land", a: "Not on its own. Access is a shared permission priced by the worst behavior on the ground, and a land manager sees the trash, not the good camper who left the day before. The parcel closes for everyone or stays open for everyone, which is why carrying out other people's litter is self-interest rather than charity." },
+      { q: "Why do closed dispersed camping areas rarely reopen", a: "Reopening requires an agency to spend staff time, rehabilitate the ground, and accept the liability of inviting people back to a place that already failed once, and there is rarely budget or appetite for it. A closure is cheap to issue and expensive to reverse, so the realistic planning assumption is that ground closed today stays closed." },
+      { q: "What does the official record not tell you about a dispersed site", a: "Maps and district rules tell you where camping is permitted and how the ground should be treated, but not what a specific site looks like this season -- whether a pullout has been widened, whether someone left a mess, whether the drainage is holding up. That current condition only comes from a rider who was recently on the ground and brought the intel back." },
+    ],
+  },
   {
     slug: "backcountry-navigation-without-a-signal",
     cluster: "finding-ground",
