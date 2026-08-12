@@ -11,6 +11,14 @@
 
 import type { Block } from "./blocks";
 import { DISPERSED_RULES } from "./pillar-dispersed-rules";
+import { PILLAR_CHOOSING_AND_BUYING_A_VAN } from "./pillar-choosing-and-buying-a-van";
+import { PILLAR_TIRES_TRACTION_AND_SELF_RECOVERY } from "./pillar-tires-traction-and-self-recovery";
+import { PILLAR_TRAVELING_WITH_A_DOG_ON_PUBLIC_LAND } from "./pillar-traveling-with-a-dog-on-public-land";
+import { PILLAR_WORKING_REMOTELY_FROM_THE_ROAD } from "./pillar-working-remotely-from-the-road";
+import { PILLAR_CARRYING_BIKES_BOATS_AND_ADVENTURE_GEAR } from "./pillar-carrying-bikes-boats-and-adventure-gear";
+import { PILLAR_SKIING_AND_WINTER_SPORTS_FROM_THE_VAN } from "./pillar-skiing-and-winter-sports-from-the-van";
+import { PILLAR_PHOTOGRAPHY_AND_THE_HONEST_RECORD } from "./pillar-photography-and-the-honest-record";
+import { PILLAR_HEALTH_FITNESS_AND_A_LONG_SEASON } from "./pillar-health-fitness-and-a-long-season";
 import { PILLAR_OVERNIGHT_PARKING_OFF_PUBLIC_LAND } from "./pillar-overnight-parking-off-public-land";
 import { PILLAR_LONG_TERM_VISITOR_AREAS_AND_SNOWBIRD_CAMPING } from "./pillar-long-term-visitor-areas-and-snowbird-camping";
 import { PILLAR_TOILET_AND_WASTE_SYSTEMS_ON_THE_ROAD } from "./pillar-toilet-and-waste-systems-on-the-road";
@@ -110,6 +118,158 @@ export type Post = {
 };
 
 export const POSTS: Post[] = [
+  {
+    slug: "choosing-and-buying-a-van",
+    cluster: "cost",
+    pillar: true,
+    title: "Choosing and Buying a Van for the Road",
+    description: "A field manual for picking a van platform and buying a sound one: Transit vs Sprinter vs ProMaster, diesel vs gas, wheelbase and roof height, new vs used, and a used-van inspection checklist.",
+    published: "2026-08-11",
+    answer: "The van is the first decision and every later choice sits on top of it, so start with wheelbase and roof height -- the two dimensions that shape the whole build -- then match a platform to the terrain you actually intend to hunt. A cargo van is a used-truck purchase first: mileage and verified service records matter more than model year, and rust on a unibody is the one defect that ends the conversation. A sound high-mileage van bought on its records beats a tired expensive one, so the money is better spent on a platform-specific inspection than on a nicer badge. Buy the drivetrain and the history; the interior is yours to build afterward.",
+    blocks: PILLAR_CHOOSING_AND_BUYING_A_VAN,
+    faq: [
+      { q: "Which van platform is best for a first build", a: "For most riders the Ford Transit is the right default: it is the cheapest of the three full-size vans to buy and service, parts are at every Ford dealer, and it is the only one offering factory all-wheel drive on a gas engine at a reasonable price. Choose a Sprinter only if you genuinely need its clearance and 4x4, and a ProMaster if your season stays on pavement and graded gravel." },
+      { q: "Is diesel or gas better for a road van", a: "Diesel earns its price premium only at high annual mileage or with sustained loaded climbing, where better fuel economy and torque pay back the higher purchase and repair costs. Below roughly fifteen thousand miles a year, or on a tight budget, gas is the correct answer -- it is cheaper to buy, far cheaper to repair, serviceable anywhere, and untroubled by cold starts and emissions hardware." },
+      { q: "How many miles is too many on a used cargo van", a: "There is no fixed ceiling -- a documented 150,000-mile van with every service interval stamped is a better buy than an undocumented 80,000-mile one. Buy the highest-mileage van whose history you can fully verify rather than the lowest-mileage van you cannot, because the records tell you whether those miles were kind ones." },
+      { q: "What should I inspect before buying a used van", a: "Cold-start the engine yourself and listen for knocks and smoke, scan for stored fault codes, and check the rockers, wheel arches, and floor for structural rust that ends a unibody van. Verify the service records against the odometer, test the transmission on a full drive, and pay 150 to 250 dollars for a pre-purchase inspection at a shop that knows the platform. Treat a refused inspection as a defect in the van." },
+      { q: "What roof height and wheelbase should I choose", a: "Choose a high roof if you want to stand up and live inside, a low roof if stealth and height-restricted parking matter more. For wheelbase, the practical breakpoint is whether an adult sleeps crosswise -- a rider over roughly five foot ten needs a long wheelbase for a sideways bed, at the cost of a wider turning circle and harder access on narrow roads." },
+      { q: "Is a fleet van a bad buy", a: "Not necessarily -- fleet history is a question, not a disqualifier. A fleet van driven mostly on the highway and serviced on a strict schedule can be an excellent buy, while one run hard and serviced only when it broke is a poor one. The service records and the interior wear pattern tell you which." },
+      { q: "Do I need a 4x4 van", a: "Most riders who buy 4x4 use it a handful of days a year and pay for it every day in purchase price, fuel, and drivetrain complexity. Match the platform to the terrain you genuinely intend to run: an AWD Transit reaches the graded and light-rough roads most objectives sit on, and only sustained backcountry, sand, snow, and steep two-track justify a full 4x4." },
+    ],
+  },
+  {
+    slug: "tires-traction-and-self-recovery",
+    cluster: "systems",
+    pillar: true,
+    title: "Tires, traction, and getting yourself unstuck",
+    description: "How to stay mobile on sand, mud, snow and washboard, and recover when you cannot -- tire choice, airing down, the minimum self-recovery kit, technique, and when to turn around.",
+    published: "2026-08-11",
+    answer: "The right tire at the right pressure prevents most recovery situations, so the kit -- traction boards, a shovel, a rated strap with rated points, and a compressor -- is the backstop, not the plan. Read every soft or rough surface on foot before you commit to it, air down for flotation and reinflate before pavement, and never spin a stuck wheel. The discipline that keeps a season running is turning around while you can still back out: a stuck van on a remote road is a several-hundred-dollar tow at best.",
+    blocks: PILLAR_TIRES_TRACTION_AND_SELF_RECOVERY,
+    faq: [
+      { q: "What tire should I run on a van for dispersed camping and forest roads", a: "An all-terrain tire in the correct load range handles the gravel, washboard, packed dirt and occasional sand a van actually meets without punishing you on the highway miles between them. Match the load range to your loaded, per-axle weight measured at a truck scale -- load range E is the common choice for a fully built heavy van." },
+      { q: "How far should I air down for sand", a: "On a heavy van with load range E tires, 15 to 20 psi is a sensible starting point for soft sand, dropped before you enter it rather than after you are stuck. Going much below 15 psi on a standard bead risks rolling the tire off in a hard turn, so stop there unless you are running beadlocks." },
+      { q: "What is the minimum self-recovery kit for a van", a: "Traction boards, a full-size shovel, a rated recovery strap with rated attachment points, and a compressor with an accurate gauge cover the large majority of situations a van meets on soft or rough ground. Everything in it should be rated for recovery loads, in reach, and something you have used before the day you need it." },
+      { q: "Why can't I use a tow chain or ratchet strap for recovery", a: "A recovery strap is engineered to stretch and absorb a shock load; a tow chain and a ratchet strap are not, and either can fail explosively under a kinetic pull. A strap that tears an anchor loose can turn steel into a projectile that kills a bystander, so use only rated straps, rated shackles, and rated recovery points, and keep everyone clear of the line." },
+      { q: "What should I do the moment my van gets stuck", a: "Stop applying throttle immediately -- a spinning tire only digs deeper. Get out and look at which wheels are bogged and what the vehicle rests on, air down if you have not, clear the ground ahead of the drive wheels, wedge traction boards hard against the tires, and drive out on the lightest throttle that keeps you moving until you reach firm ground." },
+      { q: "How do I know when to turn around instead of pushing on", a: "Turn around when the road narrows past your ability to reverse it and you cannot see the far end, when a surface you walked is softer than it looked with no way around, or when weather will make the exit worse than the entrance. The only bad reason to continue is that you have already come a long way -- that is a sunk cost, not a plan." },
+      { q: "Do I still need a spare tire if I carry a plug kit", a: "Yes. A plug kit seals tread punctures like nails and screws without removing the wheel, but sidewall cuts and blown beads do not plug, and that is what a full-size spare covers. Carry the plug kit, compressor and spare as one system, and check the spare's pressure at the desk before a run." },
+    ],
+  },
+  {
+    slug: "traveling-with-a-dog-on-public-land",
+    cluster: "legality",
+    pillar: true,
+    title: "Traveling With a Dog on Public Land",
+    description: "Where dogs are allowed on public land and where they are not, plus leash rules, predator country, hot-van danger, water, and trail hazards for riders.",
+    published: "2026-08-11",
+    answer: "Dogs are generally welcome on BLM and national forest land, often off-leash where no local order says otherwise, and generally banned from the trails inside national parks; designated Wilderness is a case-by-case patchwork set by the managing agency. Two rules carry everywhere. In predator country a dog under real control stays alive and keeps the ground open, while a loose one is the fastest route to a closure or a dead dog. And a dog is never left in a parked van in heat, where the interior passes lethal in minutes. Confirm the specific district's leash orders and closures before you drive, because the general rule is overridden somewhere in every state.",
+    blocks: PILLAR_TRAVELING_WITH_A_DOG_ON_PUBLIC_LAND,
+    faq: [
+      { q: "Can I bring my dog on national park trails", a: "Almost never. The National Park Service confines dogs to developed areas such as roads, parking lots, campgrounds, and picnic areas, and bans them from trails and backcountry across the great majority of parks. A few parks name specific dog-legal trails on their pet page, so assume a park trail is closed to dogs unless the park has told you in writing otherwise." },
+      { q: "Are dogs allowed off-leash on national forest and BLM land", a: "Usually yes on the open trail, which is why the West is the most dog-friendly ground there is. The exceptions are developed recreation sites -- campgrounds, trailheads, day-use areas -- where a six-foot leash is standard and enforced, and local leash orders that appear in high-use or wildlife-sensitive areas. Check the field office or ranger district page for the current order before assuming off-leash." },
+      { q: "Why does the leash rule matter so much in predator country", a: "A loose dog that ranges ahead can find a bear, mountain lion, moose, or den before you do, and its instinct is often to harass the animal and then run back to you with it following. Coyotes deliberately lure single dogs toward the group, and moose will stomp a dog that harasses them. Under real control the dog is an early-warning asset; out of control it delivers a threat it cannot manage straight to you." },
+      { q: "How dangerous is it to leave a dog in a parked van", a: "Lethal, and fast. On a mild 70-degree day a parked vehicle's interior reaches about 113 degrees, and at 90 degrees outside it becomes lethal to a dog within 10 to 15 minutes. Cracking the windows changes the outcome not at all, and shade only helps while it holds still, so there is no safe version of leaving a dog in a hot van." },
+      { q: "How much water does a dog need on the trail", a: "Roughly an ounce per pound of body weight per day in warm weather, and considerably more when it is hot and the terrain is hard -- a fifty-pound dog can move through half a gallon on a long day. Carry the dog's water as a separate figure added to your own, offer it every twenty to thirty minutes rather than waiting, and use a collapsible bowl because most dogs drink poorly from a squeeze bottle." },
+      { q: "What are foxtails and why are they dangerous to dogs", a: "Foxtails are barbed grass seeds, worst in dry grasses in mid to late summer across the West, that burrow into a dog's paws, ears, nose, and eyes and then migrate inward. Caught between the toes before they burrow they are a two-second removal; left to migrate they can require surgery. A hand check of the toes and ears after every outing is what catches them." },
+      { q: "How do I keep my dog from getting dogs banned from a trail", a: "Pack out all waste, yield the trail and leash up for other hikers and horses, recall the dog off wildlife every time or keep it leashed, and respect every seasonal closure and leash order exactly. Every trail closed to dogs was closed because of dogs, and the only argument against the next closure is a long run of dogs that were well managed." },
+    ],
+  },
+  {
+    slug: "working-remotely-from-the-road",
+    cluster: "cost",
+    pillar: true,
+    title: "Working Remotely From the Road",
+    description: "Earning a full-time living on the road: the connectivity stack, power to run a desk all day, building a route around coverage, and the domicile and tax questions to settle.",
+    published: "2026-08-11",
+    answer: "You can earn a full-time living from the road, but only by building the run around the work rather than fitting the work into the run. That means a connectivity stack you have tested -- two carriers, a booster, satellite as backup -- enough stored power to run a desk all day, and a route planned around coverage and time zones instead of hoped through them. It also means a domicile, mail, and tax setup settled on paper before the first paycheck. Get those right and the rest is scheduling.",
+    blocks: PILLAR_WORKING_REMOTELY_FROM_THE_ROAD,
+    faq: [
+      { q: "Can you really work a full-time job from a van", a: "Yes, if the work is genuinely remote and you build the route around it rather than the reverse. The riders who last treat connectivity, power, workspace, and admin as engineered systems, not things they hope will work out." },
+      { q: "What connectivity setup do you need to work reliably from the road", a: "A three-layer stack: cellular data on two different carriers as the primary, a signal booster or external antenna as the multiplier on weak signal, and low-earth-orbit satellite as the backup for ground with no cellular at all. Running two carriers is the single highest-value decision, because two networks rarely fail in the same place." },
+      { q: "How much battery and solar do you need to run a work setup all day", a: "Most working rigs settle on a 200 to 400 amp-hour lithium bank, roof solar, and a DC-to-DC charger that tops the bank from the alternator while driving. Size it for the whole desk running a full day with no engine and no sun -- overcast, parked, deadline -- because solar alone will not carry a work load through a run of grey days." },
+      { q: "How do you plan a route around remote work instead of hoping it works out", a: "Plan the run by where the work can happen, confirming reliable coverage for each work block before committing, and treat scenery as the reward. Use east-west position deliberately too: running west of a fixed-time team shifts your working hours earlier in local time and frees the afternoon." },
+      { q: "Where should a full-time van worker be domiciled for taxes", a: "South Dakota, Texas, and Florida dominate the decision because none has a state income tax and all have mail services and vehicle rules a rarely-present person can satisfy. None is correct in the abstract -- the right one depends on your ties, health and vehicle insurance, and how often you can actually be present." },
+      { q: "Do you still owe state income tax if you live on the road", a: "Choosing a no-income-tax domicile does not automatically clear you. A taxing state can claim you as a resident based on days present and where your life is actually rooted, so a rider who claims a no-tax domicile but parks seven months a year near family in a taxing state can still be billed. Where real money is involved, take it to a professional, not a forum." },
+      { q: "How do you receive mail with no fixed address", a: "Use a mail-forwarding service that gives you a real street address, not a PO box, scans each piece on arrival so you can triage it, and forwards, holds, or shreds on request. Have time-sensitive items forwarded to a spot you will hold for several days, and go paperless everywhere it is offered to shrink the problem." },
+    ],
+  },
+  {
+    slug: "carrying-bikes-boats-and-adventure-gear",
+    cluster: "systems",
+    pillar: true,
+    title: "Carrying Bikes, Boats, and Adventure Gear",
+    description: "How to haul bikes, watercraft, skis, and climbing gear on a van without wrecking payload, center of gravity, or mileage -- and how to secure it for washboard roads.",
+    published: "2026-08-11",
+    answer: "Carry the gear that earns the basecamp, but carry it inside the weight budget the rig already has. Bikes ride cleanest on a hitch rack or in a dedicated garage; packrafts and inflatable kayaks beat hard boats for anyone without a fixed put-in; skis and climbing gear want a sealed, sharp-and-heavy home low in the vehicle. Every pound on the roof costs mileage and center of gravity, and every load bound for washboard must be secured as if it will be shaken loose, because on those roads it will be.",
+    blocks: PILLAR_CARRYING_BIKES_BOATS_AND_ADVENTURE_GEAR,
+    faq: [
+      { q: "Hitch rack, inside the van, or a garage build for bikes", a: "A hitch rack is simplest but leaves bikes in road spray and easy to steal. Carrying them inside protects and hides them but costs interior volume and drags mud into the living space. A garage under a raised bed is the trailhead rig's answer -- protected, hidden, and isolated -- at the cost of a lower bed and usually wheels-off to fit two." },
+      { q: "Are packrafts or hard kayaks the better choice for a van", a: "For a rider who hunts put-ins -- different water each week, some down rough roads -- packrafts and inflatable kayaks win: they weigh 5 to 35 pounds, pack inside low, and inflate in minutes. A hard boat is faster on flatwater and worth the roof only when paddling from a fixed put-in is the point of the trip." },
+      { q: "What does carrying a hard boat on the roof actually cost", a: "Three standing costs paid the whole trip: it raises vehicle height into the zone where drive-throughs and canopy become hazards, it adds windage that pushes the van around in a crosswind, and it drags 2 to 4 mpg the entire distance. The costs are paid whether or not the boat touches water that day." },
+      { q: "How do you keep gear secured on washboard roads", a: "Secure every load with a mechanism, not gravity, and use two independent points on anything heavy. Torque the rack and hitch bolts before the trip and recheck them after the first rough stretch, pad every point where a strap crosses an edge, and latch drawers positively. Stop and walk the load after the first few miles -- it is the cheapest insurance you have." },
+      { q: "How much weight can a converted van actually carry", a: "Less than most riders assume. Payload is the gross vehicle weight rating minus what the van already weighs built out, often only a few hundred pounds once the build, water, fuel, and two people are counted. A pair of bikes, a rack, and a boat can run 120 to 200 pounds, so weigh the van loaded at a scale before deciding what it can carry." },
+      { q: "Where should skis, crampons, and climbing gear be stored", a: "In a fixed, hard-edged home low in the vehicle where nothing sharp can move or face the living space. Skis go in a padded bag or edge guards in a long locker; crampons and ice tools want a hard case or point protectors; the rope goes in a rope bag off the floor, away from anything that can leak on it. Loose skis in the cabin are the common mistake." },
+      { q: "How do you dry wet gear in a small van", a: "Keep the water out of the living space in the first place: wring and shake outside, rig a line under the awning, and carry a wet locker or dry bags so wet gear does not touch everything else. Ventilate with a roof fan to move humidity out, and dry ropes, skins, and boot liners first, since those are what a wet night actually costs you." },
+    ],
+  },
+  {
+    slug: "skiing-and-winter-sports-from-the-van",
+    cluster: "seasons",
+    pillar: true,
+    title: "Skiing and Winter Sports from the Van",
+    description: "How to use a van as a winter basecamp for resort laps and backcountry touring -- where to sleep, drying wet gear, avalanche safety, and timing storms over passes.",
+    published: "2026-08-11",
+    answer: "A van makes a workable winter basecamp for resort laps and backcountry touring on two conditions. The rig has to be a real cold-weather build -- a vented fuel-fired heater, a plan for the water wet gear dumps into the air, and a battery that will not fold in the cold. And leaving a resort boundary or touring the backcountry puts you in avalanche terrain, where staying alive is training, a partner, and the day's forecast -- not a gear list and not a strong skier's instinct.",
+    blocks: PILLAR_SKIING_AND_WINTER_SPORTS_FROM_THE_VAN,
+    faq: [
+      { q: "Can you sleep in a ski resort parking lot overnight", a: "It depends entirely on the resort. Some run sanctioned overnight or RV lots, some tolerate it in an outer lot if you arrive late, park far out, and are gone by the morning rush, and many post against it because the lot must be plowed before dawn. When the signage is silent, call guest services and accept the answer without negotiating." },
+      { q: "Is a propane buddy heater safe to run overnight in a van in winter", a: "No. An unvented buddy heater dumps carbon monoxide and more than a liter of water per pound of gas straight into the cabin. It belongs to short daytime use with a window cracked and a carbon-monoxide alarm running, never a closed van overnight. Use a vented fuel-fired air heater, which exhausts combustion outside and adds no water to the air." },
+      { q: "What do I need before touring outside a resort boundary", a: "Training, a partner, and the day's forecast -- in that order, before any gear. Take a recognized avalanche course such as an AIARE Level 1 or equivalent, travel with a trained partner who carries a beacon, shovel, and probe, and read your regional avalanche center's forecast for that zone the morning you go. Equipment lets a partner dig you out; it does not keep you out of the slide." },
+      { q: "How do you dry ski boots and skins overnight in a van", a: "Pull the liners out of the boot shells every night so both dry, and never start a day in frozen or damp liners, which is a fast route to cold-injured feet. Dry skins at room temperature rather than pressed against a heater, which can wreck the adhesive. What actually dries gear is warm air moving past it and out a cracked vent, not heat alone." },
+      { q: "At what avalanche danger level do most fatalities happen", a: "The largest share occur at Moderate (level 2) and Considerable (level 3), not at High or Extreme. High and Extreme days keep people home, while Moderate and Considerable days look skiable and fool experienced riders into terrain the day did not actually permit. A green-looking morning is not a safe one." },
+      { q: "How do I time a winter route over a mountain pass", a: "Treat the pass, not the destination, as the constraint that sets your schedule. Cross while the weather is good and the road is confirmed open on the state DOT road line, checked the morning you cross rather than the night before, and wait out storms on the low side. Carry chains that fit your tires and know the state's chain-law levels, since enforcement turns vehicles back at the bottom of the grade." },
+      { q: "Are winter trailheads plowed for overnight parking", a: "Often not. A Forest Service or BLM trailhead open for overnight parking in summer may be unplowed and under several feet of snow in winter, with the last accessible spot wherever the county or resort stops clearing the road. Check the specific access point rather than assuming the summer rule holds, and note that a Sno-Park or plowed pass pullout may require a state winter-recreation permit in the window." },
+    ],
+  },
+  {
+    slug: "photography-and-the-honest-record",
+    cluster: "the-record",
+    pillar: true,
+    title: "Photography and Keeping an Honest Record",
+    description: "How to document the road so a photograph informs rather than misleads: why a dated, located image is evidence and a beautiful undated one is decoration.",
+    published: "2026-08-11",
+    answer: "A photograph proves only that a place looked a certain way to one camera at one instant; it says nothing about whether the site is legal, open, empty, or reachable today. A beautiful undated image is worth less than a plain one carrying a date and a confirmed location, because almost every question a rider asks is a question about time, and only the date answers it. For the record, an image is evidence when it is tied to when and where it was taken; without that, it is decoration. Keep the precise pin in your field notes, write down what the light hides, and confirm the fast-decaying facts -- legality, conditions, crowds -- from a current source rather than the frame.",
+    blocks: PILLAR_PHOTOGRAPHY_AND_THE_HONEST_RECORD,
+    faq: [
+      { q: "What does a photograph actually prove about a campsite", a: "It proves the ground existed and had a certain shape at the instant the shutter fired, and that it held whatever was inside the frame then. It does not prove the site is legal, open, free, passable, or empty on any other day -- those are facts the image cannot contain." },
+      { q: "Why is a dated photo worth more than a beautiful undated one", a: "Almost every question a rider asks of an image is about time: is the road passable now, is the creek running, is the gate open, is the site worn out. Only the date answers those, so a plain dated snapshot is evidence you can weigh while a stunning undated frame is only a mood." },
+      { q: "Should I geotag and share the exact location of a spot I found", a: "Keep the precise coordinates in your own field notes and any access-controlled record, but give a public audience only the region. A precise pin broadcast to a large following is the mechanism by which quiet, lightly-used, legal places become crowded, damaged, and then closed." },
+      { q: "What should a field note capture that the photograph cannot", a: "Occupancy over time, legality and fees, the approach and clearance the frame starts after, the wind or noise the light flattered, and what sits just outside the edges. Write it while you can still see the thing, because memory flatters as reliably as light does." },
+      { q: "Is editing a photo dishonest for a record", a: "Correcting exposure, straightening, or cropping is fine because it changes the look, not the facts. Replacing a sky, removing a crowd, or erasing a fee sign changes a fact a rider would act on, and an image edited to change decisions is no longer a record." },
+      { q: "How quickly does a photograph go out of date", a: "It depends on the fact. General terrain holds for years and surface for a season or two, but vegetation is good for weeks, water for days, crowds for hours, and legal status can change overnight. The fastest-decaying facts are exactly the ones people most often ask a photo to prove." },
+      { q: "Can I rely on an image to decide whether to drive somewhere", a: "Use it only to decide a place is worth checking. Confirm legality with the managing district, passability and conditions from a recent dated report, and current occupancy some other way, because an image supports those claims for the shortest time or not at all." },
+    ],
+  },
+  {
+    slug: "health-fitness-and-a-long-season",
+    cluster: "systems",
+    pillar: true,
+    title: "Health, fitness, and a long season",
+    description: "How riders stay physically and mentally well over months on the road -- movement, food, sleep, hydration, sun, isolation, and healthcare access, treated as daily upkeep.",
+    published: "2026-08-11",
+    answer: "You keep a body working over a long season the way you keep the vehicle working -- upkeep is a daily task, not a rescue. The ground is your gym, your storage sets your diet, level ground and darkness set your sleep, and water is the input you plan first. Carry real first-aid, hold a national-network insurance plan with telehealth, and know where the nearest urgent care sits before you need it. The season rewards the rider who does the small maintenance every day and punishes the one who waits for something to break.",
+    blocks: PILLAR_HEALTH_FITNESS_AND_A_LONG_SEASON,
+    faq: [
+      { q: "How do you stay fit on the road without a gym", a: "Use terrain and bodyweight: hiking is the base, and air squats, push-ups, hangs, and loaded carries cover the rest with no equipment. The highest-value habit is not sitting in a seat all day -- break up long drives and choose the harder version of ordinary tasks." },
+      { q: "How much water do you need at altitude and in heat", a: "Baseline is roughly 2.5 to 3.5 liters a day, rising to 4 to 6 liters on a hot day with effort and higher still with hard exertion in heat. Above 8,000 feet add about a liter over baseline even at rest, and carry electrolytes once you are sweating hard, because the severe failure is lack of salt, not water." },
+      { q: "What healthcare options work when you have no fixed address", a: "Four routes cover almost everything: your own first-aid kit for minor injuries, telehealth for prescriptions and advice from anywhere with signal, urgent care in small towns for same-day non-emergencies, and emergency rooms for genuine emergencies only. The backstop is an insurance plan built on a national provider network rather than a local one." },
+      { q: "How do you sleep well in a different place every night", a: "Control the four inputs on arrival: level the sleeping surface to within a couple of degrees, manage temperature with ventilation and a bag rated to the night, block dawn with full window covers, and carry earplugs for noise. Level ground is the most common self-inflicted bad night and a two-minute fix." },
+      { q: "What is the difference between solitude and loneliness on the road", a: "Solitude is chosen and it restores you; loneliness is solitude gone past its useful length, and the difference is whether you still feel connected to people who matter when you are alone. Learn where your own line sits and act before you cross it, using scheduled contact home and telehealth mental-health support as upkeep, not weakness." },
+      { q: "What should a real first-aid kit for a long season include", a: "Build it in tiers: a trail kit on you with a pressure dressing, tape, blister care, painkillers, and personal meds; a fuller vehicle kit with wound care, splint material, burn dressings, and irrigation; and current medications for allergies, illness, and pain. The highest-value addition is a day of wilderness first-aid training, because gear you cannot use is just weight." },
+      { q: "How do you eat well with a small cooler and limited water", a: "Anchor protein at every meal, carry produce that holds without cold like onions, carrots, cabbage, and citrus, and favor one-pot meals that cut water, fuel, and washing-up at once. Resupply on a schedule rather than on empty, since running the cooler to zero is what forces the drift to junk." },
+    ],
+  },
   {
     slug: "overnight-parking-off-public-land",
     cluster: "finding-ground",
