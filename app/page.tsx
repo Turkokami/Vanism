@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { VerificationStamp } from "@/components/VerificationStamp";
 import { AnswerBox } from "@/components/AnswerBox";
 import { CtaBar } from "@/components/CtaBar";
@@ -106,6 +107,40 @@ export default async function Home() {
               <p className="mt-3 text-sm leading-relaxed text-slate">{c.b}</p>
             </article>
           ))}
+        </section>
+
+        <section className="mt-24 grid gap-12 rounded-lg border border-ink-raised bg-ink-raised/30 px-6 py-14 md:grid-cols-[1.1fr_1fr] md:items-center md:px-12">
+          <div>
+            <p className="eyebrow">The app &middot; C3I</p>
+            <h2 className="display mt-3 text-[clamp(1.9rem,4vw,2.75rem)] text-bone">
+              Plan at the desk.
+              <br />
+              Command it on the road.
+            </h2>
+            <p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-slate">
+              C3I is the calm travel OS at the center of Vanism. It gathers your
+              file, helps you build the run, and keeps the record as you hunt real
+              ground by GPS &mdash; one season, from the desk to the driver&rsquo;s
+              seat.
+            </p>
+            <a
+              href="https://apps.apple.com/us/app/vanism/id6786479632"
+              className="display mt-8 inline-block bg-brass px-7 py-3.5 text-sm text-ink hover:bg-brass-lit"
+            >
+              Download on the App Store
+            </a>
+          </div>
+
+          <div className="flex justify-center md:justify-end">
+            <Image
+              src="/app-c3i.png"
+              alt="Vanism C3I home screen on iPhone: plan the season, build the run, command the road"
+              width={680}
+              height={1332}
+              priority
+              className="h-auto w-full max-w-[280px]"
+            />
+          </div>
         </section>
 
         <CtaBar context="home" />
