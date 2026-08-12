@@ -11,8 +11,10 @@ export const revalidate = 1800;
  * a van at sunset. This opens with the one thing none of them can put on a
  * page: a count of people who actually stood there, struck as a benchmark.
  *
- * LAW II -- no escape vocabulary anywhere in this copy. The verbs are stand,
- * walk, confirm, earn.
+ * LAW II -- no escape vocabulary anywhere in this copy. The verbs are hunt,
+ * stand, confirm, earn -- matching the live vanism.ai voice: turn the road into
+ * something you earn; plan the season at the desk; hunt real places by GPS;
+ * bring intel back to the Village.
  */
 export default async function Home() {
   const objectives = await getPublishableObjectives();
@@ -37,8 +39,9 @@ export default async function Home() {
           </h1>
           <p className="mt-7 max-w-lg text-[1.0625rem] leading-relaxed text-slate">
             Every other app hands you a database of places. Vanism records who
-            walked in, what they found, and when they confirmed it. Position is
-            earned on the ground and it is never for sale.
+            hunted the site, what they found on the ground, and when they last
+            confirmed it. Position is earned across the season, and it is never
+            for sale.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -71,9 +74,11 @@ export default async function Home() {
           <p>
             Vanism is a road-travel app for van life and overlanding where every
             site, water point and access note is confirmed by GPS-verified
-            check-ins from riders who were physically present. Riders build rank
-            by reaching objectives themselves. Rank cannot be purchased, and a
-            subscription buys planning tools, never standing.
+            check-ins from riders who were physically present. Riders plan the
+            season at the desk, hunt real places by GPS, and bring confirmed
+            intel back to the Village. Rank is earned by reaching objectives, it
+            cannot be purchased, and a subscription buys planning tools, never
+            standing.
           </p>
         </AnswerBox>
 

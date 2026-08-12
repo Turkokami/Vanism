@@ -11,6 +11,14 @@
 
 import type { Block } from "./blocks";
 import { DISPERSED_RULES } from "./pillar-dispersed-rules";
+import { PILLAR_BACKCOUNTRY_NAVIGATION_WITHOUT_A_SIGNAL } from "./pillar-backcountry-navigation-without-a-signal";
+import { PILLAR_READING_MOUNTAIN_WEATHER_AND_LIGHTNING } from "./pillar-reading-mountain-weather-and-lightning";
+import { PILLAR_FINDING_AND_TREATING_WATER_IN_THE_BACKCOUNTRY } from "./pillar-finding-and-treating-water-in-the-backcountry";
+import { PILLAR_BEAR_COUNTRY_AND_FOOD_STORAGE } from "./pillar-bear-country-and-food-storage";
+import { PILLAR_WILDERNESS_PERMITS_AND_TRAILHEAD_RULES } from "./pillar-wilderness-permits-and-trailhead-rules";
+import { PILLAR_FIRE_RESTRICTIONS_AND_CAMPFIRE_RULES } from "./pillar-fire-restrictions-and-campfire-rules";
+import { PILLAR_EMERGENCY_COMMUNICATION_AND_SELF_RESCUE } from "./pillar-emergency-communication-and-self-rescue";
+import { PILLAR_TIMING_A_ROUTE_BY_SEASON_AND_ELEVATION } from "./pillar-timing-a-route-by-season-and-elevation";
 import { PILLAR_WHAT_A_SEASON_ON_THE_ROAD_COSTS } from "./pillar-what-a-season-on-the-road-costs";
 import { PILLAR_READING_A_FOREST_SERVICE_MAP } from "./pillar-reading-a-forest-service-map";
 import { PILLAR_HOW_TO_FIND_DISPERSED_CAMPING } from "./pillar-how-to-find-dispersed-camping";
@@ -94,6 +102,158 @@ export type Post = {
 };
 
 export const POSTS: Post[] = [
+  {
+    slug: "backcountry-navigation-without-a-signal",
+    cluster: "finding-ground",
+    pillar: true,
+    title: "Backcountry navigation without a signal",
+    description: "How to find your way when the phone has no bars and the battery is a liability -- offline maps, contour reading, map and compass, and recovering when you lose position.",
+    published: "2026-08-11",
+    answer: "Download the offline map for the whole area before you leave signal, and carry a paper topo and a baseplate compass you know how to use -- the phone and GPS unit are fast but run on batteries and firmware, while the map and compass are the system that never dies. Read contour spacing for slope, set declination once, and use handrails, catching features, and aiming off to make a bearing forgiving. Mark the van and the trailhead the moment you arrive. When you are unsure of your position, stop moving and back-track to the last point you can positively identify rather than pushing on to guess.",
+    blocks: PILLAR_BACKCOUNTRY_NAVIGATION_WITHOUT_A_SIGNAL,
+    faq: [
+      { q: "How do I get maps for an area with no cell signal", a: "Download the offline topo and satellite layers for the whole area while you still have signal, ideally at home before the run rather than in the last parking lot. Draw the download box wider than your route so a bail-out down the wrong drainage does not leave you off the map. A downloaded map still needs the phone alive to show it, so carry a paper topo as the backup." },
+      { q: "What does close contour spacing mean on a topographic map", a: "Lines close together mean steep ground, lines far apart mean gentle ground, and lines merged into a single dark band mean a cliff. The vertical distance between lines is the contour interval printed in the margin -- commonly 40 feet on a 1:24,000 US topo -- so counting the lines you cross tells you how much you climbed." },
+      { q: "Why does declination matter for a compass bearing", a: "The needle points to magnetic north and the map grid points to true north, and the angle between them varies from about 15 degrees east in the Pacific Northwest to 15 degrees west in Maine. Set declination once on a compass with an adjustable scale and every bearing then reads true north automatically; ignore it and a bearing held over a few miles walks you a long way off." },
+      { q: "What is aiming off in navigation", a: "Aiming off means deliberately steering to one side of a target that sits on a line, such as a van parked along a road. Aim straight at it and drift and you reach the line not knowing whether to turn left or right; aim off by several degrees and you know exactly which way to turn. A deliberate, known error beats an accidental, unknown one." },
+      { q: "What should I do if I get lost in the backcountry", a: "Stop moving the moment you are unsure, because every step from an unknown position makes the position more unknown. Work the STOP drill -- Stop, Think, Observe, Plan -- and if you cannot positively fix your position on the map, back-track to the last point you identified with certainty rather than pushing on downhill hoping water leads out." },
+      { q: "How do I make my phone battery last for GPS navigation", a: "Put the phone in airplane mode, since GPS still works because it only receives, and keep it warm against your body because cold can halve a lithium battery or shut it off. Keep the screen off between checks, and treat a power bank as finite -- a 10,000 mAh bank is roughly two to three charges, less in the cold." },
+      { q: "Is a GPS unit or a phone better for backcountry navigation", a: "A dedicated GPS unit tolerates cold far better, runs on swappable AA batteries, and survives being dropped on rock, which suits long trips where you carry spares. A phone is more capable but more fragile, so treat it as a fast tool rather than the whole system, and keep a paper map and compass underneath both as the layer that never dies." },
+    ],
+  },
+  {
+    slug: "reading-mountain-weather-and-lightning",
+    cluster: "seasons",
+    pillar: true,
+    title: "Reading Mountain Weather and Lightning",
+    description: "How to read mountain weather before it turns: the afternoon-thunderstorm pattern, the noon rule, lightning position and 30/30, hypothermia and wind chill, and when to turn around.",
+    published: "2026-08-11",
+    answer: "Mountain weather turns fast because the terrain builds its own storms, so in monsoon country you plan to be below treeline by noon and off summits and ridgelines before the cumulus stack. The two killers are lightning and hypothermia; both are survivable if you read the building sky early, get low and off exposed ground under the 30/30 rule, and layer against wind and rain even in summer. Turning around is the strong decision, not the weak one -- the mountain holds the same position next season, and you have to be there to hunt it.",
+    blocks: PILLAR_READING_MOUNTAIN_WEATHER_AND_LIGHTNING,
+    faq: [
+      { q: "What time should I be below treeline in the mountains", a: "In monsoon country -- roughly July into September across the interior West -- plan to be below treeline by noon, because storms build in the late morning and break in the early afternoon on a reliable schedule. In a strong surge storms can fire by ten, so start the exposed section at dawn and shift the turnaround earlier if the sky is already building." },
+      { q: "What is the 30/30 rule for lightning", a: "The first thirty: if the gap between a lightning flash and its thunder is thirty seconds or less, the storm is within about six miles and close enough to strike you, so take shelter. The second thirty: wait a full thirty minutes after the last thunder before returning to exposed ground, because the back edge of a storm throws lightning as readily as the front." },
+      { q: "What should I do if lightning is close and I am caught in the open", a: "Get off summits and ridgelines, away from lone trees, water, and metal, and take the lightning position: crouch on the balls of your feet with your feet together, arms around your knees, head tucked, on an insulating pad if you have one. Do not lie flat -- that maximizes your contact with ground current, which causes most casualties." },
+      { q: "Can you get hypothermia in summer", a: "Yes -- hypothermia kills more backcountry travelers than lightning and often strikes in summer, above freezing, when nobody expected cold. It only needs you to be wet and in wind without enough insulation; a 45-degree day with rain and a stiff breeze is a more efficient hypothermia machine than a dry night at 20." },
+      { q: "How do I tell a fair-weather cloud from a storm building", a: "Fair-weather cumulus is flat-bottomed and wider than tall, signaling mild lift. Watch for vertical growth: when those puffs stack upward into sharp-edged cauliflower towers taller than they are wide, and especially when the top spreads into a flat anvil blowing downwind, the cloud is an organized thunderstorm already throwing lightning." },
+      { q: "Is turning around a sign of a weak hiker", a: "No -- turning around is the strong decision and the competence the sport actually rewards. The mountain is a fixed objective that holds the same position next season, so a rider who turns around has not lost it, only deferred it under conditions they read correctly. The trap is the sunk-cost climb, which is why you set a hard turnaround time before you start and honor it." },
+      { q: "How far away is lightning if I count 15 seconds between the flash and the thunder", a: "About three miles, since sound travels roughly a mile every five seconds. That is well within striking range -- lightning routinely jumps six miles from its cloud -- so at fifteen seconds or less you should already be off exposed ground and taking shelter, not watching." },
+    ],
+  },
+  {
+    slug: "finding-and-treating-water-in-the-backcountry",
+    cluster: "systems",
+    pillar: true,
+    title: "Finding and Treating Water in the Backcountry",
+    description: "How much water a hiker needs, how to find it from map clues and confirm it is running, and how to treat it safely with filters, chemicals, UV, or boiling.",
+    published: "2026-08-11",
+    answer: "A hiker needs roughly half a liter to a liter per hour of moving effort -- two to four liters over a normal day, six or more in heat or at altitude. Find water by reading a topo map for springs and perennial streams, then confirm the source is actually running before you rely on it. Treat all of it, because clear cold water still carries giardia, cryptosporidium and bacteria: a filter handles protozoa and bacteria, while chlorine dioxide or boiling also kills viruses. In freezing conditions, keep a used filter from freezing or it cracks and passes everything invisibly.",
+    blocks: PILLAR_FINDING_AND_TREATING_WATER_IN_THE_BACKCOUNTRY,
+    faq: [
+      { q: "How much water does a hiker actually need per day", a: "Plan by rate, not a fixed total: about half a liter per hour in mild conditions and closer to a liter per hour when it is hot or the climbing is hard. That lands most people between two and four liters on an average day and five to seven on a hot, exposed one. Add a liter or two above 8,000 feet, where dry air and hard breathing raise loss even when it feels cold." },
+      { q: "Is clear, cold, moving mountain water safe to drink untreated", a: "No. Appearance is not a reliable signal; water can look and taste perfect and still carry giardia, cryptosporidium and bacteria you cannot see, taste or smell. Even an alpine stream over granite drains a basin holding elk, marmots, cattle and every hiker upstream, so treat all backcountry water." },
+      { q: "What is the difference between a filter and chemical treatment", a: "A hollow-fiber filter physically removes protozoa and bacteria and works instantly, but its pores are too large to stop viruses. Chlorine dioxide kills protozoa, bacteria and viruses and cannot freeze or break, but it needs about 30 minutes and up to four hours against cryptosporidium. Carrying both covers each one's weakness." },
+      { q: "Why do water filters fail in cold weather", a: "Water trapped in the hollow fibers expands about nine percent when it freezes and splits them, opening holes far larger than a giardia cyst. A frozen-then-thawed filter flows and looks normal but passes unfiltered water, and there is no field test for it. Once a filter has been used, keep it from freezing -- sleep with it in your bag on cold nights." },
+      { q: "How do I know whether a mapped spring will actually have water", a: "A source on a map is a lead, not a fact, and a spring that ran for a decade can be dry the summer you walk to it. Confirm it with current-season information: call the managing office, read dated trip reports, check the region's snowpack, and ask riders who were recently on that ground. Never plan a stretch where one unconfirmed source is all that stands between you and running dry." },
+      { q: "Does boiling make backcountry water safe", a: "Yes -- boiling kills every biological pathogen. Bringing water to a rolling boil is sufficient at any elevation a hiker reaches, since pathogens die well before boiling point; holding it a minute is a conservative margin. It does nothing about chemical contamination and costs fuel and time, which makes it best as the fallback when a filter freezes or fails." },
+      { q: "What treatment reliably kills cryptosporidium", a: "Cryptosporidium's hard-shelled oocyst resists chlorine and iodine at field doses, so tablets are slow or ineffective against it. A physical filter removes it, boiling kills it, and UV light works on clear water. If you rely on chlorine dioxide, allow the extended contact time -- up to four hours -- rather than the standard 30 minutes." },
+    ],
+  },
+  {
+    slug: "bear-country-and-food-storage",
+    cluster: "systems",
+    pillar: true,
+    title: "Bear Country and Food Storage",
+    description: "How to keep food from bears and bears from trouble: where storage is required, which methods work, black bear versus grizzly response, and van storage at a trailhead.",
+    published: "2026-08-11",
+    answer: "In bear country, store every scent -- food, trash, toothpaste, cookware -- in an approved canister, a provided bear locker, or a hard-sided vehicle, never in your tent. Where a food storage order is in effect, an approved container is a requirement you can be cited for ignoring, not a suggestion. The reason is not your safety alone: a bear that gets a human meal loses its fear and is usually killed, so you store food to protect the animal as much as yourself.",
+    blocks: PILLAR_BEAR_COUNTRY_AND_FOOD_STORAGE,
+    faq: [
+      { q: "Where is bear-proof food storage legally required", a: "In most national parks in bear country a food storage order is in effect, and many national forests and designated wilderness areas require an approved canister or hard-sided storage where posted. The requirement is set by the managing unit, so confirm the specific order for that park or ranger district before you go. Some wilderness units also publish an approved-canister list and reject models not on it." },
+      { q: "What counts as a scent that has to be stored", a: "Everything with an odor, not just food. That includes trash and packaging, used cookware and stoves, toiletries like toothpaste, sunscreen and soap, pet food and bowls, and clothes you splattered food on. The working rule is that if a person can smell it, a bear can smell it from far greater distance." },
+      { q: "Why do hung food bags often fail", a: "A working hang has to be at least 12 feet off the ground, 6 feet out from the trunk, and 6 feet below the branch, and much of the terrain riders camp in has no tree that meets that standard. Most hangs people rig are reachable by a determined bear. In grizzly country and many parks hangs are no longer accepted at all because bears have learned to defeat them." },
+      { q: "Is playing dead the right response to any bear attack", a: "No, it depends on the species. In a defensive grizzly attack, play dead until the bear breaks off; with a black bear, playing dead invites it to treat you as food, so you fight back and focus on the face. Never run from either, and carry bear spray where you can reach it in seconds." },
+      { q: "Can I just keep my food in the van at a trailhead", a: "In most black bear country a hard-sided vehicle with food out of sight is enough, but a fabric pop-top does not count and food must go in the hard cab or a canister. In the most habituated parks and forests bears break into cars, and the storage order there requires a locker or canister even with the van present. A cooler visible on a seat is what draws a break-in." },
+      { q: "Why is food storage described as protecting the bear", a: "A bear that gets a human meal loses its fear, moves into campgrounds and trailheads, and is usually relocated or destroyed once it becomes a danger. Relocation rarely works, so the animal typically pays for the mistake. Storing food keeps the bear from ever getting that first reward, which is what keeps it wild and alive." },
+      { q: "How far apart should cooking, sleeping and food storage be", a: "The backcountry standard is a triangle with cooking, storage and sleeping each at a separate corner, ideally around 100 yards apart, with the sleeping area upwind if the wind is steady. The non-negotiable part is that the place you sleep carries no food smell, ever." },
+    ],
+  },
+  {
+    slug: "wilderness-permits-and-trailhead-rules",
+    cluster: "legality",
+    pillar: true,
+    title: "Wilderness Permits and Trailhead Rules",
+    description: "How permits work when you hike off public land: designated Wilderness rules, day-use versus overnight permits, quotas and lotteries, self-issue stations, and trailhead parking and overnight rules by agency.",
+    published: "2026-08-11",
+    answer: "Most public-land hiking needs no permit, but three things change that: crossing into designated Wilderness, entering National Park backcountry, and hitting a trailhead that runs a quota. Designated Wilderness bans vehicles and bikes, caps group size, and often requires a permit; day-use permits are usually free and self-issued, while overnight and quota permits can need a reservation booked weeks to six months out. The trailhead is governed separately again -- it may require a parking pass and may or may not allow you to sleep in the lot. Confirm the permit, the parking, and current conditions with the managing district office before you commit the drive.",
+    blocks: PILLAR_WILDERNESS_PERMITS_AND_TRAILHEAD_RULES,
+    faq: [
+      { q: "Do you need a permit to hike on public land", a: "Most trails need no permit at all beyond legal parking. That changes in designated Wilderness, in National Park backcountry, and at any trailhead that runs a quota, where a day-use or overnight permit may be required." },
+      { q: "What is the difference between a day-use and an overnight permit", a: "A day-use permit covers walking in and out the same day and is usually free and self-issued at the trailhead. An overnight permit covers sleeping out and is where quotas, fees, and reservation windows concentrate; it also covers day use, but a day permit never covers the night." },
+      { q: "Can you ride a mountain bike in a designated Wilderness", a: "No. The Wilderness Act bans all mechanized travel, and a bicycle counts as mechanized even without a motor. Bikes, e-bikes, game carts, and drones all stop at the boundary, whether or not the tread continues past it." },
+      { q: "How far ahead do you need to book a wilderness permit", a: "For marquee trails on summer weekends, assume the reservation or lottery window is the binding constraint; six months is the common release horizon for the most contested permits, and some sell out the morning they open. Most trails need only a walk-up self-issue permit the morning of the hike." },
+      { q: "Can you sleep in your vehicle at a trailhead overnight", a: "On Forest Service and BLM trailheads it is frequently tolerated, provided you stay inside the vehicle and put nothing outside it. On National Park and most state park trailheads, assume it is prohibited unless a sign says otherwise, and plan to sleep outside the boundary." },
+      { q: "How is National Park backcountry different from national forest", a: "The default inverts: in a National Park you may not camp in the backcountry unless a permit specifically authorizes it, often at an assigned site or zone, with mandatory bear-canister food storage. On forest and BLM land you may generally camp unless told otherwise." },
+      { q: "What is a self-issue trailhead permit", a: "It is a free two-part paper tag filled out at a trailhead kiosk where a permit is required but no quota applies. One half goes in the drop box and you carry the other; skipping it is a citable violation even though no one is watching you register." },
+    ],
+  },
+  {
+    slug: "fire-restrictions-and-campfire-rules",
+    cluster: "legality",
+    pillar: true,
+    title: "Fire Restrictions and Campfire Rules",
+    description: "How the Stage 1, Stage 2, and full-closure fire restriction system works on public land, what each stage bans, where fire is legal, and how to check the current stage.",
+    published: "2026-08-11",
+    answer: "Fire on public land is governed by a stage system set at district level. With no restriction you may build a campfire in an existing ring, on bare mineral soil clear of vegetation, never on peat or duff, and put it dead cold before leaving. Stage 1 bans open fire and restricts smoking; Stage 2 also bans stoves without a shutoff valve and often chainsaws and off-road driving; a full closure bans entry entirely. A stove with a shutoff valve survives most restrictions, a route built on campfires does not, and the signed order for your specific district on the day is the only stage that governs.",
+    blocks: PILLAR_FIRE_RESTRICTIONS_AND_CAMPFIRE_RULES,
+    faq: [
+      { q: "What is the difference between Stage 1 and Stage 2 fire restrictions", a: "Stage 1 bans campfires, charcoal, and open flame outside developed agency rings, and restricts smoking to inside a vehicle or a cleared area, while stoves with a shutoff valve stay legal. Stage 2 goes further -- it bans all open flame including in developed rings in most districts, commonly bans chainsaws, generators, and off-road driving, and in some districts restricts or bans shutoff stoves too." },
+      { q: "Can I use a camp stove during a fire ban", a: "Usually yes, if it has a shutoff valve. Petrol, propane, canister, and liquid-fuel stoves are written into the Stage 1 exception and survive Stage 2 in most districts because a valve gives instant control. A wood-burning or twig stove is not a shutoff stove and is banned as open flame at Stage 1 in most orders, so carry a valved stove as your primary." },
+      { q: "How do I check the current fire restriction stage for an area", a: "Identify the exact managing unit -- the specific national forest ranger district or BLM field office -- and read the signed fire order posted on that unit's own page, checking the stove line and the effective date. Confirm again close to arrival, because a restriction announced with a few days notice will not have reached most third-party apps yet, and a national aggregator map lags the source by exactly that window." },
+      { q: "Where can I legally build a campfire when no restriction is in force", a: "Use an existing established fire ring, on bare mineral soil, rock, or gravel with at least 5 feet cleared around it and no branches within about 15 feet overhead, well clear of grass, brush, and logs. Never build a fire on peat, duff, or root mats, because they carry fire underground where it smolders for days and reignites well away from the ring." },
+      { q: "What does dead-and-down firewood mean", a: "It means wood that is already dead and already lying on the ground, which you may collect where gathering is permitted. You may not cut standing trees, alive or dead, and may not break limbs from anything still standing, since standing dead snags are wildlife habitat. Many high-use and alpine areas ban gathering entirely, so check the district rule and bring your own wood bought within about 50 miles." },
+      { q: "How do I put a campfire out completely", a: "A fire is out only when it is cold to the touch, not when the flames are gone. Drown it with far more water than seems necessary, stir the coals and ash as you pour so water reaches the material underneath, and repeat until the hissing stops entirely. Then hold the back of your hand near the ash -- if you feel any warmth, it is not out." },
+      { q: "What happens if my campfire escapes and starts a wildfire", a: "You can be held liable for suppression costs running into the hundreds of thousands or millions of dollars, plus property and resource damage, none of it capped at what you can pay. A fire started in violation of a restriction is also a criminal matter, misdemeanor or felony depending on outcome, and negligence alone is enough -- restitution has followed people for the rest of their lives, and escaped campfires kill firefighters and residents." },
+    ],
+  },
+  {
+    slug: "emergency-communication-and-self-rescue",
+    cluster: "systems",
+    pillar: true,
+    title: "Emergency Communication and Self-Rescue",
+    description: "How to call for help where there is no cell signal -- satellite messengers, locator beacons, the free trip plan that starts a search, and the self-rescue habits that prevent most rescues.",
+    published: "2026-08-11",
+    answer: "Off the grid, a satellite messenger sends two-way texts on a paid subscription while a personal locator beacon sends a subscription-free SOS on a government network; serious parties often carry one of each. But the highest-value item costs nothing -- a written trip plan left with one reliable person, carrying your route and a hard check-in time, which starts a search on the day it matters. Most incidents are handled without a rescue at all, by a rider who knows their limits, turns around early, and treats small problems before they compound.",
+    blocks: PILLAR_EMERGENCY_COMMUNICATION_AND_SELF_RESCUE,
+    faq: [
+      { q: "What is the difference between a satellite messenger and a personal locator beacon", a: "A satellite messenger sends two-way text, tracking, and SOS over a commercial network (Iridium or Globalstar) and requires a paid subscription. A personal locator beacon sends an SOS-only distress signal on the government Cospas-Sarsat network with no subscription, but it cannot receive a reply or report that you are safe." },
+      { q: "Do personal locator beacons require a monthly subscription", a: "No. A PLB has no subscription and no monthly fee, and registration is free and takes about ten minutes. It works the moment it is registered and stays live for the life of its non-rechargeable cell, typically rated five to seven years of standby." },
+      { q: "What actually happens when you press the SOS button", a: "A PLB signal routes through the Cospas-Sarsat satellites to a government rescue coordination centre, which confirms your registration, checks your emergency contacts, and tasks local search and rescue. A messenger's SOS goes to a private 24/7 monitoring centre that can text you back to confirm the emergency and, critically, let you cancel a launch you no longer need." },
+      { q: "Why is a written trip plan the highest-value safety item", a: "A trip plan left with one reliable person -- carrying your route, vehicle, and a hard check-in time -- turns a missed check-in into a search that starts the same day. It costs nothing and does what no beacon can: it starts the response even when you are unconscious, out of battery, or unable to reach a device." },
+      { q: "What should a basic wilderness first-aid kit contain", a: "Dressings and gauze for wounds, an elastic wrap for sprains, blister care, wound-cleaning supplies, splinting material, your own medications plus an antihistamine and pain tablets, and gloves, tape, shears, and an emergency blanket. The goal is to stabilize a rider enough to self-rescue, and the skill to use the kit matters more than its contents." },
+      { q: "How does cold affect emergency device batteries", a: "Lithium-ion capacity and voltage drop sharply below freezing, so a messenger or phone can read empty when it is not, and a cold-soaked device can be dead by morning. Keep any emergency device against your body, sleep with it in your bag, and carry a charged power bank kept warm too." },
+      { q: "Can a phone's built-in satellite SOS replace a dedicated messenger or beacon", a: "No. Phone satellite SOS is a useful supplement, but it drains the one battery you most need to preserve, needs a clear patch of sky and a steady hold for a fix, and its coverage and terms are still uneven. Treat it as a bonus, not the reason to skip a dedicated device." },
+    ],
+  },
+  {
+    slug: "timing-a-route-by-season-and-elevation",
+    cluster: "seasons",
+    pillar: true,
+    title: "Timing a Route by Season and Elevation",
+    description: "How elevation works as a second calendar, the four western hazard seasons, reading a snowpack and closure window, and matching a run to conditions rather than a fixed itinerary.",
+    published: "2026-08-11",
+    answer: "Elevation is a second calendar: snow lingers high into July while the low desert is already lethal, so you climb as the season warms and drop as it cools. Time a run by elevation band and by the regional hazard windows -- monsoon and flash flood in the Southwest, fire and smoke in the mountain West, mud and gated roads in spring, snow and pass timing in the high country. The framework gets you to the right month and band; the current snowpack, closure, and conditions for a specific district beat every general figure, including these.",
+    blocks: PILLAR_TIMING_A_ROUTE_BY_SEASON_AND_ELEVATION,
+    faq: [
+      { q: "How does elevation change when a route is in season", a: "Temperature drops roughly 3 to 5 degrees Fahrenheit per thousand feet, which sets the seasonal calendar back by weeks for every few thousand feet you climb. A site at 10,000 feet runs two to three months behind the valley below it, so high ground is a warm-season objective while low desert is a cool-season one." },
+      { q: "What are the main hazard seasons for a western route", a: "Four dominate: the Southwest monsoon and flash flood roughly July to September, mountain-West fire and smoke from June or July into October, spring mud season and road closures April to June, and high-country snow that gates passes late in spring and closes them early in autumn. Each can close ground the temperature says is fine." },
+      { q: "How do I read a snowpack report for route timing", a: "In the western United States the metric is snow water equivalent (SWE), reported as a percent of the long-term normal and published daily from SNOTEL stations. A basin under 70 percent on April 1 signals an early opening; over 130 percent means passes open weeks late, some not until mid-July. It tells you whether the year runs early or late, not the exact date." },
+      { q: "Why are the shoulder seasons worth planning around", a: "The best conditions on public land are almost never in the peak weeks. They fall in the window just after a band opens and just before it closes, when the weather has settled but the crowds and hazards have not fully arrived. The fortnight after a montane gate opens is consistently the best conditions and fewest vehicles of the year." },
+      { q: "Should I plan a long route north-to-south or by elevation", a: "Plan by elevation. Riders who run north-to-south hit weather because the south warms before the north thaws and the timing never lines up. Following the usable band -- climbing with the melt in spring and dropping ahead of the freeze in autumn -- keeps a run in season the whole way, and the map barely changes while the elevation profile does the work." },
+      { q: "How much can I trust a published gate opening date", a: "Treat it as the earliest plausible date and add slack. Crews open a road when the ground is ready and the roadbed is stable, not when the calendar says, so published openings run optimistic, especially after a heavy winter. The first passable date and the first comfortable date can be a fortnight apart, and only someone recently on the road knows which one today is." },
+      { q: "What does a fixed itinerary get wrong about timing a route", a: "An itinerary is a hypothesis about a normal year; the conditions are the fact, and when they disagree the conditions win. Build the skeleton by band and month, overlay the hazard windows, read this year's snowpack against normal, and keep slack at the transitions plus an alternate region for the fire-season legs when smoke can arrive with a day of notice." },
+    ],
+  },
   {
     slug: "how-to-find-dispersed-camping",
     cluster: "finding-ground",
