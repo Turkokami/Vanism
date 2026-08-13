@@ -48,13 +48,13 @@ export default async function Home() {
           <div className="mt-9 flex flex-wrap gap-3">
             <Link
               href="/ground"
-              className="display bg-brass px-7 py-3.5 text-sm text-ink hover:bg-brass-lit"
+              className="display lift bg-brass px-7 py-3.5 text-sm text-ink hover:bg-brass-lit"
             >
               Open the ground
             </Link>
             <Link
               href="/codex"
-              className="display border border-ink-raised px-7 py-3.5 text-sm text-bone hover:border-brass"
+              className="display hud lift border border-ink-raised px-7 py-3.5 text-sm text-bone hover:border-brass"
             >
               Read the codex
             </Link>

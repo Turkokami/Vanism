@@ -36,7 +36,8 @@ export function VerificationStamp({
           : "Not yet rider-verified"
       }
     >
-      <span className="eyebrow">
+      <span className="eyebrow inline-flex items-center justify-center gap-1.5">
+        {verified && <span className="pulse" aria-hidden="true" />}
         {verified ? "Rider verified" : "Unverified"}
       </span>
 
