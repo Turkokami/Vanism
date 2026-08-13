@@ -7,7 +7,7 @@ import { EmailCapture } from "./EmailCapture";
  */
 export function CtaBar({ context }: { context: string }) {
   return (
-    <section className="mt-20 grid gap-6 border border-ink-raised p-6 md:grid-cols-2 md:p-8">
+    <section className="hud mt-20 grid gap-6 border border-ink-raised bg-ink-deep/40 p-6 md:grid-cols-2 md:p-8">
       <div>
         <h2 className="display text-2xl text-bone">Stand there yourself</h2>
         <p className="mt-3 text-sm leading-relaxed text-slate">
@@ -17,7 +17,7 @@ export function CtaBar({ context }: { context: string }) {
         </p>
         <Link
           href="/pricing"
-          className="display mt-5 inline-block border border-brass px-6 py-3 text-sm text-brass hover:bg-brass hover:text-ink"
+          className="display lit mt-5 inline-block border border-brass px-6 py-3 text-sm text-brass hover:bg-brass hover:text-ink"
         >
           See what it costs
         </Link>

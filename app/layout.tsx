@@ -46,8 +46,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           Skip to content
         </a>
+        <div className="viewport-hud" aria-hidden="true" />
         <Header />
-        <main id="main">{children}</main>
+        <main id="main" className="boot">{children}</main>
         <DoctrineFooter />
       </body>
     </html>

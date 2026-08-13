@@ -48,7 +48,7 @@ export default async function Home() {
           <div className="mt-9 flex flex-wrap gap-3">
             <Link
               href="/ground"
-              className="display lift bg-brass px-7 py-3.5 text-sm text-ink hover:bg-brass-lit"
+              className="display lift lit bg-brass px-7 py-3.5 text-sm text-ink hover:bg-brass-lit"
             >
               Open the ground
             </Link>
@@ -130,7 +130,7 @@ export default async function Home() {
             </p>
             <a
               href="https://apps.apple.com/us/app/vanism/id6786479632"
-              className="display mt-8 inline-block bg-brass px-7 py-3.5 text-sm text-ink hover:bg-brass-lit"
+              className="display lit mt-8 inline-block bg-brass px-7 py-3.5 text-sm text-ink hover:bg-brass-lit"
             >
               Download on the App Store
             </a>
