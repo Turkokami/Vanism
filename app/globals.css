@@ -106,13 +106,36 @@ body::before {
   pointer-events: none;
   background-color: var(--color-ink);
   background-image:
-    radial-gradient(115% 85% at 88% -12%,
-      color-mix(in srgb, var(--color-brass) 8%, transparent), transparent 55%),
-    radial-gradient(95% 80% at -8% 110%,
-      color-mix(in srgb, var(--color-verify) 6%, transparent), transparent 55%),
-    linear-gradient(color-mix(in srgb, var(--color-slate) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--color-slate) 5%, transparent) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(120% 92% at 90% -14%,
+      color-mix(in srgb, var(--color-brass) 15%, transparent), transparent 55%),
+    radial-gradient(100% 88% at -10% 112%,
+      color-mix(in srgb, var(--color-verify) 12%, transparent), transparent 55%),
+    /* major blueprint grid, brass */
+    linear-gradient(color-mix(in srgb, var(--color-brass) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-brass) 10%, transparent) 1px, transparent 1px),
+    /* fine grid, slate */
+    linear-gradient(color-mix(in srgb, var(--color-slate) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-slate) 9%, transparent) 1px, transparent 1px);
+  background-size:
+    100% 100%, 100% 100%,
+    160px 160px, 160px 160px,
+    40px 40px, 40px 40px;
+}
+
+/* Scanline texture -- a field-computer readout laid over the grid. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-bone) 3%, transparent) 0,
+    color-mix(in srgb, var(--color-bone) 3%, transparent) 1px,
+    transparent 1px,
+    transparent 3px
+  );
 }
 
 /* Corner-bracket frame for a panel, card, or CTA -- tactical HUD framing. */
@@ -121,13 +144,17 @@ body::before {
 .hud::after {
   content: "";
   position: absolute;
-  width: 11px;
-  height: 11px;
-  border: 1px solid color-mix(in srgb, var(--color-brass) 60%, transparent);
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-brass);
   pointer-events: none;
 }
 .hud::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
 .hud::after { right: -1px; bottom: -1px; border-left: 0; border-top: 0; }
+
+/* Accent glow for earned display type -- brass reads as lit, not printed. */
+.glow { text-shadow: 0 0 18px color-mix(in srgb, var(--color-brass) 55%, transparent); }
+.glow-verify { text-shadow: 0 0 18px color-mix(in srgb, var(--color-verify) 60%, transparent); }
 
 /* Live signal dot -- placed only where a claim is currently verified. */
 .pulse {
@@ -146,17 +173,20 @@ body::before {
 
 /* Animated scan hairline for section dividers. */
 .hud-rule {
-  height: 1px;
+  height: 2px;
   border: 0;
-  background: linear-gradient(90deg, transparent,
-    color-mix(in srgb, var(--color-brass) 50%, transparent), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-brass), transparent);
   background-size: 200% 100%;
-  animation: scan 5s linear infinite;
+  animation: scan 3.5s linear infinite;
 }
 @keyframes scan { to { background-position: -200% 0; } }
 
-/* The benchmark disc reads as a powered instrument. */
-.stamp { box-shadow: 0 0 26px -10px color-mix(in srgb, var(--color-brass) 32%, transparent); }
+/* The benchmark disc reads as a powered instrument, struck and lit. */
+.stamp {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-brass) 30%, transparent),
+    0 0 44px -6px color-mix(in srgb, var(--color-brass) 45%, transparent);
+}
 
 /* Interactive lift for framed panels. */
 @media (prefers-reduced-motion: no-preference) {

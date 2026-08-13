@@ -36,7 +36,7 @@ export default async function Home() {
             <br />
             someone
             <br />
-            <span className="text-brass">stood on.</span>
+            <span className="text-brass glow">stood on.</span>
           </h1>
           <p className="mt-7 max-w-lg text-[1.0625rem] leading-relaxed text-slate">
             Every other app hands you a database of places. Vanism records who
@@ -101,7 +101,10 @@ export default async function Home() {
               b: "Dragon is earned virtual currency. It is never sold for real money and it is not a subscription perk. That rule predates the app.",
             },
           ].map((c) => (
-            <article key={c.k}>
+            <article
+              key={c.k}
+              className="hud lift border border-ink-raised bg-ink-deep/40 p-6"
+            >
               <p className="eyebrow">{c.k}</p>
               <h3 className="display mt-3 text-xl text-bone">{c.t}</h3>
               <p className="mt-3 text-sm leading-relaxed text-slate">{c.b}</p>
@@ -109,7 +112,9 @@ export default async function Home() {
           ))}
         </section>
 
-        <section className="mt-24 grid gap-12 rounded-lg border border-ink-raised bg-ink-raised/30 px-6 py-14 md:grid-cols-[1.1fr_1fr] md:items-center md:px-12">
+        <hr className="hud-rule mt-24" />
+
+        <section className="hud mt-16 grid gap-12 border border-ink-raised bg-ink-raised/30 px-6 py-14 md:grid-cols-[1.1fr_1fr] md:items-center md:px-12">
           <div>
             <p className="eyebrow">The app &middot; C3I</p>
             <h2 className="display mt-3 text-[clamp(1.9rem,4vw,2.75rem)] text-bone">
