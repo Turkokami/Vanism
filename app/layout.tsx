@@ -6,6 +6,7 @@ import { DoctrineFooter } from "@/components/DoctrineFooter";
 import { rootGraph } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -50,6 +51,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Header />
         <main id="main" className="boot">{children}</main>
         <DoctrineFooter />
+        {/* Vercel Speed Insights (free tier): first-party page-speed readings, cookieless. */}
+        <SpeedInsights />
       </body>
     </html>
   );
