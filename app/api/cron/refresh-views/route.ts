@@ -9,8 +9,11 @@ import { NextResponse } from "next/server";
  * needs it, and it must never be exposed to the client bundle.
  */
 export async function GET(req: Request) {
+  const secret = process.env.CRON_SECRET;
   const auth = req.headers.get("authorization");
-  if (auth !== `Bearer ${process.env.CRON_SECRET}`) {
+  // Fail closed: with no CRON_SECRET the expected header would be
+  // "Bearer undefined", which anyone can send.
+  if (!secret || secret.length < 16 || auth !== `Bearer ${secret}`) {
     return NextResponse.json({ ok: false }, { status: 401 });
   }
 

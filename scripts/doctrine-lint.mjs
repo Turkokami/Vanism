@@ -12,6 +12,9 @@
  *   3. No *.vercel.app in any legal or App Store facing string (Prohibition 11).
  *   4. No hardcoded aggregateRating (Prohibition 2).
  *   5. Registry blockers reported, and fatal when building for production.
+ *   6. No secret read through a NEXT_PUBLIC_ variable. Next.js copies every
+ *      NEXT_PUBLIC_ value the code reads into the browser bundle, and the
+ *      Supabase integration created several secret ones in Vercel.
  */
 
 import { readFileSync, readdirSync, statSync } from "node:fs";
@@ -70,6 +73,11 @@ function check(path) {
 
   if (/vercel\.app/.test(src) && !rel.startsWith("next.config")) {
     failures.push(`PROHIB 11 ${rel} -- *.vercel.app reference`);
+  }
+
+  const leaked = src.match(/NEXT_PUBLIC_[A-Z0-9_]*(SERVICE_ROLE|SECRET|JWT|PASSWORD|POSTGRES)[A-Z0-9_]*/);
+  if (leaked) {
+    failures.push(`SECRET  ${rel} -- ${leaked[0]} would be shipped to the browser`);
   }
 }
 

@@ -115,11 +115,17 @@ create unique index if not exists mv_village_standing_key
 -- ---------------------------------------------------------------------------
 -- RLS
 -- ---------------------------------------------------------------------------
-alter table riders     enable row level security;
-alter table check_ins  enable row level security;
-alter table rank_ledger enable row level security;
+alter table riders         enable row level security;
+alter table check_ins      enable row level security;
+alter table rank_ledger    enable row level security;
+-- Public content tables: readable by anyone, writable only with the service
+-- role key. Without RLS here the public anon key could edit or delete them.
+alter table objectives     enable row level security;
+alter table runs           enable row level security;
+alter table run_objectives enable row level security;
 
 -- No anon policy on riders at all. The anon role reaches rider data only
 -- through mv_village_standing.
 create policy objectives_public_read on objectives for select to anon using (true);
 create policy runs_public_read       on runs       for select to anon using (true);
+create policy run_objectives_public_read on run_objectives for select to anon using (true);

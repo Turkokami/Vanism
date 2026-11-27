@@ -169,7 +169,12 @@ begin
   refresh materialized view concurrently mv_ground_stats;
   refresh materialized view concurrently mv_village_standing;
 end;
-$$ language plpgsql security definer;
+$$ language plpgsql security definer set search_path = public;
+
+-- Only the server (service role) may run the refresh; the public anon key
+-- must not be able to trigger it.
+revoke execute on function refresh_ground_views() from public, anon, authenticated;
+grant execute on function refresh_ground_views() to service_role;
 
 refresh materialized view mv_ground_stats;
 refresh materialized view mv_village_standing;
